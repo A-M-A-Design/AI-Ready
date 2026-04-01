@@ -215,7 +215,6 @@
       "type": "object",
       "required": [
         "figma_source",
-        "structural_source",
         "variant_count",
         "default_variant",
         "variant_diffs_count",
@@ -231,10 +230,6 @@
             "pageId": { "type": "string" }
           }
         },
-        "structural_source": {
-          "type": "string",
-          "description": "Extraction method (e.g., 'mcp_v6.2')"
-        },
         "variant_count": {
           "type": "integer",
           "minimum": 1
@@ -245,6 +240,10 @@
         "variant_diffs_count": {
           "type": "integer",
           "minimum": 0
+        },
+        "structural_source": {
+          "type": "string",
+          "description": "Extraction method (e.g., 'mcp_v6.2')"
         },
         "ai_content_source": {
           "type": "string",

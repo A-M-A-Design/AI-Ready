@@ -8,13 +8,10 @@
     "component",
     "figma_ids",
     "title",
-    "vc",
-    "dv",
     "props",
     "anatomy",
     "tokens",
-    "meta",
-    "_extracted_at"
+    "metadata"
   ],
   "properties": {
     "component": {
@@ -28,7 +25,7 @@
         "pattern": "^(aem|web)\\.[a-z0-9-]+$"
       },
       "minItems": 1,
-      "description": "Figma component IDs with prefix (e.g., ['aem.billboard', 'web.button-bb'])"
+      "description": "Figma component IDs with prefix (e.g., ['aem.billboard'])"
     },
     "title": {
       "type": "string",
@@ -37,15 +34,6 @@
     "description": {
       "type": "string",
       "description": "Raw description from Figma component (may be empty)"
-    },
-    "vc": {
-      "type": "integer",
-      "minimum": 1,
-      "description": "Variant count - number of variants in the component set"
-    },
-    "dv": {
-      "type": "string",
-      "description": "Default variant configuration string (e.g., 'breakpoint=mobile, type=default')"
     },
     "props": {
       "type": "object",
@@ -89,37 +77,55 @@
       ],
       "description": "Invalid prop combinations or variant gap analysis"
     },
-    "meta": {
+    "metadata": {
       "type": "object",
-      "required": ["nid"],
+      "required": ["figma_source", "variant_count", "default_variant", "extracted_at"],
       "properties": {
-        "nid": {
-          "type": "string",
-          "pattern": "^[0-9]+:[0-9]+$",
-          "description": "Figma node ID"
+        "figma_source": {
+          "type": "object",
+          "required": ["nodeId"],
+          "properties": {
+            "nodeId": {
+              "type": "string",
+              "pattern": "^[0-9]+:[0-9]+$",
+              "description": "Figma node ID"
+            },
+            "pageId": {
+              "type": "string",
+              "pattern": "^[0-9]+:[0-9]+$",
+              "description": "Figma parent/page ID"
+            }
+          }
         },
-        "pid": {
+        "variant_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of variants in the component set"
+        },
+        "default_variant": {
           "type": "string",
-          "pattern": "^[0-9]+:[0-9]+$",
-          "description": "Figma parent/page ID"
+          "description": "Default variant configuration string"
+        },
+        "extracted_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of extraction"
+        },
+        "extractor_version": {
+          "type": "string",
+          "description": "Version of the MCP extractor used"
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "aliases": { "type": "integer" },
+            "resolved": { "type": "integer" },
+            "instances": { "type": "integer" },
+            "resolvedInstances": { "type": "integer" }
+          },
+          "description": "Extraction statistics"
         }
-      },
-      "description": "Figma metadata"
-    },
-    "_stats": {
-      "type": "object",
-      "properties": {
-        "aliases": { "type": "integer" },
-        "resolved": { "type": "integer" },
-        "instances": { "type": "integer" },
-        "resolvedInstances": { "type": "integer" }
-      },
-      "description": "Extraction statistics (optional)"
-    },
-    "_extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO timestamp of extraction"
+      }
     }
   },
   "$defs": {

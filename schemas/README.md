@@ -8,13 +8,10 @@ This directory contains JSON schemas for the WDS Fusion Pipeline.
 |--------|------|---------|----------|
 | **MCP Extraction** | `mcp-extraction.schema.json` | Raw Figma extraction output | `cache/*/mcp_only/` |
 | **AI Content** | `ai-content.schema.json` | Enriched documentation | `cache/*/ai_ready/` |
-| **Component** | `component.schema.json` | Legacy/combined schema | — |
 
 ---
 
-## Champs communs (identiques)
-
-Ces champs ont le **même format** dans les 2 schemas :
+## Champs communs (identiques dans les 2 schemas)
 
 | Champ | Type | Description |
 |-------|------|-------------|
@@ -23,6 +20,18 @@ Ces champs ont le **même format** dans les 2 schemas :
 | `anatomy` | object | Structure hiérarchique |
 | `props` | object | Propriétés du composant |
 | `variant_diffs` | array | Différences entre variants |
+| `metadata` | object | Métadonnées |
+
+---
+
+## Différences clés
+
+| Aspect | MCP Extraction | AI Content |
+|--------|----------------|------------|
+| **Tokens** | Array plat | Objet catégorisé |
+| **Description** | Texte brut | `intent` structuré |
+| **UX Content** | — | `rules`, `variant_logic`, `relationships` |
+| **Schema ref** | — | `$schema`, `version` |
 
 ---
 
@@ -30,20 +39,13 @@ Ces champs ont le **même format** dans les 2 schemas :
 
 **File:** `mcp-extraction.schema.json`
 
-**Purpose:** Validates raw extraction output from the MCP Figma extractor.
-
 **Champs spécifiques MCP :**
 
 | Champ | Type | Description |
 |-------|------|-------------|
 | `title` | string | Titre Figma (avec 💠) |
 | `description` | string | Description brute Figma |
-| `vc` | integer | Nombre de variants |
-| `dv` | string | Configuration du variant par défaut |
 | `tokens` | array | Liste plate de tokens |
-| `meta` | object | `{ nid, pid }` |
-| `_stats` | object | Statistiques d'extraction |
-| `_extracted_at` | datetime | Timestamp ISO |
 
 **Exemple :**
 ```json
@@ -51,11 +53,13 @@ Ces champs ont le **même format** dans les 2 schemas :
   "component": "Billboard",
   "figma_ids": ["aem.billboard"],
   "title": "💠 aem.billboard",
-  "vc": 12,
-  "dv": "breakpoint=mobile, type=default",
   "tokens": ["breakpoints/wel/sem/sizing/grid/margins", ...],
-  "meta": { "nid": "5390:5662", "pid": "64:59" },
-  "_extracted_at": "2026-04-01T14:23:08.476Z"
+  "metadata": {
+    "figma_source": { "nodeId": "5390:5662", "pageId": "64:59" },
+    "variant_count": 12,
+    "default_variant": "breakpoint=mobile, type=default",
+    "extracted_at": "2026-04-01T14:23:08.476Z"
+  }
 }
 ```
 
@@ -64,8 +68,6 @@ Ces champs ont le **même format** dans les 2 schemas :
 ## 2. AI Content Schema
 
 **File:** `ai-content.schema.json`
-
-**Purpose:** Validates enriched documentation ready for AI consumption.
 
 **Champs spécifiques AI Content :**
 
@@ -80,7 +82,6 @@ Ces champs ont le **même format** dans les 2 schemas :
 | `relationships` | object | Relations entre composants |
 | `context` | object | `{ modality: ["desktop", ...] }` |
 | `tokens` | object | Tokens catégorisés |
-| `metadata` | object | Métadonnées complètes |
 
 **Exemple :**
 ```json
@@ -99,6 +100,15 @@ Ces champs ont le **même format** dans les 2 schemas :
     "color": ["colorModes/wel/sem/color/on-surface-hi"],
     "typography": ["breakpoints/wel/sem/fontSizes/display/lg"],
     "spacing": ["breakpoints/wel/sem/sizing/grid/margins"]
+  },
+  "metadata": {
+    "figma_source": { "nodeId": "5390:5662", "pageId": "64:59" },
+    "variant_count": 12,
+    "default_variant": "breakpoint=mobile, type=default",
+    "variant_diffs_count": 3,
+    "ai_content_source": "supernova",
+    "fusion_date": "2026-04-01T15:00:00.000Z",
+    "pipeline_version": "9.0.0"
   }
 }
 ```
@@ -111,9 +121,7 @@ Ces champs ont le **même format** dans les 2 schemas :
 |----------------|------------|----------------|
 | `description` (text) | `intent` (object) | Parse + enrich |
 | `tokens` (array) | `tokens` (object) | Categorize by type |
-| `vc` | `metadata.variant_count` | Move to metadata |
-| `dv` | `metadata.default_variant` | Move to metadata |
-| `meta.nid` | `metadata.figma_source.nodeId` | Restructure |
+| `metadata.extracted_at` | `metadata.fusion_date` | Rename |
 | — | `rules` | Add from Supernova |
 | — | `variant_logic` | Generate from context |
 | — | `relationships` | Add from Supernova |
