@@ -1,0 +1,515 @@
+{
+  "$schema": "../schemas/config.schema.json",
+  "version": "9.0.0",
+  "source": {
+    "name": "💠 Core AEM",
+    "fileKey": "sdTj7GavgRf42hiOgJ5XtU",
+    "prefix": "aem.",
+    "type": "core_aem"
+  },
+  "github": {
+    "owner": "A-M-A-Design",
+    "repo": "AI-Ready",
+    "branch": "main",
+    "cachePath": "cache/core_aem"
+  },
+  "extraction": {
+    "mode": "single",
+    "timeout": 30000,
+    "maxDepth": 4,
+    "maxSingleAxisDiffs": 15
+  },
+  "components": {
+    "Billboard": {
+      "nodeId": "5390:5662",
+      "figmaId": "aem.billboard",
+      "slug": "billboard",
+      "variantCount": 12,
+      "complexity": "simple",
+      "status": "extracted"
+    },
+    "Billboard Image": {
+      "nodeId": "5419:69031",
+      "figmaId": "aem.billboard-image",
+      "slug": "billboard-image",
+      "variantCount": 7,
+      "complexity": "simple",
+      "status": "extracted"
+    },
+    "Bloc Maps": {
+      "nodeId": "26639:30964",
+      "figmaId": "aem.bloc-maps",
+      "slug": "bloc-maps",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "extracted"
+    },
+    "Booking Engine Aem Full Option": {
+      "nodeId": "25393:100656",
+      "figmaId": "aem.booking-engine-aem-full-option",
+      "slug": "booking-engine-aem-full-option",
+      "variantCount": 6,
+      "complexity": "simple",
+      "status": "extracted"
+    },
+    "Booking Engine Aem Light": {
+      "nodeId": "25393:100728",
+      "figmaId": "aem.booking-engine-aem-light",
+      "slug": "booking-engine-aem-light",
+      "variantCount": 6,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Booking Engine Next Version Full Option": {
+      "nodeId": "25393:101495",
+      "figmaId": "aem.booking-engine-next-version-full-option",
+      "slug": "booking-engine-next-version-full-option",
+      "variantCount": 94,
+      "complexity": "complex",
+      "status": "pending"
+    },
+    "Booking Engine Next Version Light": {
+      "nodeId": "25393:102613",
+      "figmaId": "aem.booking-engine-next-version-light",
+      "slug": "booking-engine-next-version-light",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Booking Engine Sticky": {
+      "nodeId": "25393:101389",
+      "figmaId": "aem.booking-engine-sticky",
+      "slug": "booking-engine-sticky",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Callout Editorial Container": {
+      "nodeId": "8491:78408",
+      "figmaId": "aem.callout-editorial-container",
+      "slug": "callout-editorial-container",
+      "variantCount": 44,
+      "complexity": "complex",
+      "status": "pending"
+    },
+    "Callout Marketing Container": {
+      "nodeId": "12124:119257",
+      "figmaId": "aem.callout-marketing-container",
+      "slug": "callout-marketing-container",
+      "variantCount": 21,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Callout Product Container": {
+      "nodeId": "13198:217604",
+      "figmaId": "aem.callout-product-container",
+      "slug": "callout-product-container",
+      "variantCount": 24,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card": {
+      "nodeId": "6:2270",
+      "figmaId": "aem.card",
+      "slug": "card",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card Editorial": {
+      "nodeId": "160:6034",
+      "figmaId": "aem.card-editorial",
+      "slug": "card-editorial",
+      "variantCount": 6,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card Editorial Article": {
+      "nodeId": "160:6065",
+      "figmaId": "aem.card-editorial-article",
+      "slug": "card-editorial-article",
+      "variantCount": 6,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card Hotel": {
+      "nodeId": "25424:85217",
+      "figmaId": "aem.card-hotel",
+      "slug": "card-hotel",
+      "variantCount": 12,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card Image Default Container": {
+      "nodeId": "7846:155492",
+      "figmaId": "aem.card-image-default-container",
+      "slug": "card-image-default-container",
+      "variantCount": 52,
+      "complexity": "complex",
+      "status": "pending"
+    },
+    "Card Image Logo Container": {
+      "nodeId": "14447:15369",
+      "figmaId": "aem.card-image-logo-container",
+      "slug": "card-image-logo-container",
+      "variantCount": 32,
+      "complexity": "complex",
+      "status": "pending"
+    },
+    "Card Image Offer Container": {
+      "nodeId": "7938:267855",
+      "figmaId": "aem.card-image-offer-container",
+      "slug": "card-image-offer-container",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card Image Wide Container": {
+      "nodeId": "7868:49223",
+      "figmaId": "aem.card-image-wide-container",
+      "slug": "card-image-wide-container",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card Offer": {
+      "nodeId": "10680:1069",
+      "figmaId": "aem.card-offer",
+      "slug": "card-offer",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Card Offer Deals": {
+      "nodeId": "25235:24445",
+      "figmaId": "aem.card-offer-deals",
+      "slug": "card-offer-deals",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Contacts": {
+      "nodeId": "162:7248",
+      "figmaId": "aem.contacts",
+      "slug": "contacts",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Discovery Bar": {
+      "nodeId": "7866:732",
+      "figmaId": "aem.discovery-bar",
+      "slug": "discovery-bar",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Download App": {
+      "nodeId": "2102:1704",
+      "figmaId": "aem.download-app",
+      "slug": "download-app",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Enrollment": {
+      "nodeId": "24962:3335",
+      "figmaId": "aem.enrollment",
+      "slug": "enrollment",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Faq": {
+      "nodeId": "2160:1352",
+      "figmaId": "aem.faq",
+      "slug": "faq",
+      "variantCount": 6,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Filters": {
+      "nodeId": "25364:3961",
+      "figmaId": "aem.filters",
+      "slug": "filters",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Filters Chips": {
+      "nodeId": "25364:5028",
+      "figmaId": "aem.filters-chips",
+      "slug": "filters-chips",
+      "variantCount": 2,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Footer": {
+      "nodeId": "25364:6405",
+      "figmaId": "aem.footer",
+      "slug": "footer",
+      "variantCount": 24,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Heading Hero": {
+      "nodeId": "2163:2322",
+      "figmaId": "aem.heading-hero",
+      "slug": "heading-hero",
+      "variantCount": 24,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Heading Hero Immersive": {
+      "nodeId": "2163:5396",
+      "figmaId": "aem.heading-hero-immersive",
+      "slug": "heading-hero-immersive",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Heading Offer": {
+      "nodeId": "2163:31785",
+      "figmaId": "aem.heading-offer",
+      "slug": "heading-offer",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Heading Section Primary": {
+      "nodeId": "2163:37075",
+      "figmaId": "aem.heading-section-primary",
+      "slug": "heading-section-primary",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Heading Section Secondary": {
+      "nodeId": "5049:32092",
+      "figmaId": "aem.heading-section-secondary",
+      "slug": "heading-section-secondary",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Heading With Card": {
+      "nodeId": "2163:37280",
+      "figmaId": "aem.heading-with-card",
+      "slug": "heading-with-card",
+      "variantCount": 28,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Highlight": {
+      "nodeId": "2163:45278",
+      "figmaId": "aem.highlight",
+      "slug": "highlight",
+      "variantCount": 22,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Hub": {
+      "nodeId": "2163:49236",
+      "figmaId": "aem.hub",
+      "slug": "hub",
+      "variantCount": 6,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Key Features Section": {
+      "nodeId": "2277:1404",
+      "figmaId": "aem.key-features-section",
+      "slug": "key-features-section",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "List Item": {
+      "nodeId": "3402:23606",
+      "figmaId": "aem.list-item",
+      "slug": "list-item",
+      "variantCount": 5,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "List V3": {
+      "nodeId": "3402:24428",
+      "figmaId": "aem.list-v3",
+      "slug": "list-v3",
+      "variantCount": 48,
+      "complexity": "complex",
+      "status": "pending"
+    },
+    "Location": {
+      "nodeId": "2279:13058",
+      "figmaId": "aem.location",
+      "slug": "location",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Modal Download": {
+      "nodeId": "17784:2472",
+      "figmaId": "aem.modal-download",
+      "slug": "modal-download",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Modal Qrcode": {
+      "nodeId": "13807:15267",
+      "figmaId": "aem.modal-qrcode",
+      "slug": "modal-qrcode",
+      "variantCount": 2,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Newsletter": {
+      "nodeId": "2542:37872",
+      "figmaId": "aem.newsletter",
+      "slug": "newsletter",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Product Booking": {
+      "nodeId": "2323:15025",
+      "figmaId": "aem.product-booking",
+      "slug": "product-booking",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Quick Access": {
+      "nodeId": "2443:884",
+      "figmaId": "aem.quick-access",
+      "slug": "quick-access",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Quote": {
+      "nodeId": "2453:263",
+      "figmaId": "aem.quote",
+      "slug": "quote",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Search Destination": {
+      "nodeId": "25411:596",
+      "figmaId": "aem.search-destination",
+      "slug": "search-destination",
+      "variantCount": 3,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Search Engine Discovery": {
+      "nodeId": "25393:97656",
+      "figmaId": "aem.search-engine-discovery",
+      "slug": "search-engine-discovery",
+      "variantCount": 8,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Section With Background": {
+      "nodeId": "4338:2913",
+      "figmaId": "aem.section-with-background",
+      "slug": "section-with-background",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Separator With Icon": {
+      "nodeId": "2484:148",
+      "figmaId": "aem.separator-with-icon",
+      "slug": "separator-with-icon",
+      "variantCount": 2,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Slideshow Dual": {
+      "nodeId": "5453:3109",
+      "figmaId": "aem.slideshow-dual",
+      "slug": "slideshow-dual",
+      "variantCount": 12,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Social Media": {
+      "nodeId": "2489:5512",
+      "figmaId": "aem.social-media",
+      "slug": "social-media",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Special Touches Mga": {
+      "nodeId": "2032:7276",
+      "figmaId": "aem.special-touches-mga",
+      "slug": "special-touches-mga",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Special Touches Sof": {
+      "nodeId": "2045:17041",
+      "figmaId": "aem.special-touches-sof",
+      "slug": "special-touches-sof",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Summary": {
+      "nodeId": "22965:199",
+      "figmaId": "aem.summary",
+      "slug": "summary",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Text": {
+      "nodeId": "2491:6198",
+      "figmaId": "aem.text",
+      "slug": "text",
+      "variantCount": 12,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Text Section": {
+      "nodeId": "2491:6418",
+      "figmaId": "aem.text-section",
+      "slug": "text-section",
+      "variantCount": 16,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Top Informations": {
+      "nodeId": "2491:7876",
+      "figmaId": "aem.top-informations",
+      "slug": "top-informations",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    },
+    "Welcome": {
+      "nodeId": "24503:254",
+      "figmaId": "aem.welcome",
+      "slug": "welcome",
+      "variantCount": 4,
+      "complexity": "simple",
+      "status": "pending"
+    }
+  },
+  "stats": {
+    "total": 60,
+    "simple": 55,
+    "complex": 5,
+    "extracted": 4,
+    "pending": 56
+  },
+  "_generated": {
+    "timestamp": "2026-04-01T14:40:00Z",
+    "method": "mcp_single_v6.2"
+  }
+}
