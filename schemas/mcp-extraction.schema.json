@@ -6,7 +6,7 @@
   "type": "object",
   "required": [
     "component",
-    "figmaId",
+    "figma_ids",
     "title",
     "vc",
     "dv",
@@ -21,10 +21,14 @@
       "type": "string",
       "description": "Human-readable component name (e.g., 'Billboard', 'Card Hotel')"
     },
-    "figmaId": {
-      "type": "string",
-      "pattern": "^(aem|web)\\.[a-z0-9-]+$",
-      "description": "Figma component ID with prefix (e.g., 'aem.billboard', 'web.button-bb')"
+    "figma_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(aem|web)\\.[a-z0-9-]+$"
+      },
+      "minItems": 1,
+      "description": "Figma component IDs with prefix (e.g., ['aem.billboard', 'web.button-bb'])"
     },
     "title": {
       "type": "string",

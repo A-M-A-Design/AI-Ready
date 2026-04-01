@@ -12,35 +12,52 @@ This directory contains JSON schemas for the WDS Fusion Pipeline.
 
 ---
 
+## Champs communs (identiques)
+
+Ces champs ont le **même format** dans les 2 schemas :
+
+| Champ | Type | Description |
+|-------|------|-------------|
+| `component` | string | Nom du composant |
+| `figma_ids` | array | IDs Figma (ex: `["aem.billboard"]`) |
+| `anatomy` | object | Structure hiérarchique |
+| `props` | object | Propriétés du composant |
+| `variant_diffs` | array | Différences entre variants |
+
+---
+
 ## 1. MCP Extraction Schema
 
 **File:** `mcp-extraction.schema.json`
 
-**Purpose:** Validates raw extraction output from the MCP Figma extractor (`mcp_extractor_v6_2_single.js`).
+**Purpose:** Validates raw extraction output from the MCP Figma extractor.
 
-**Key fields:**
+**Champs spécifiques MCP :**
+
+| Champ | Type | Description |
+|-------|------|-------------|
+| `title` | string | Titre Figma (avec 💠) |
+| `description` | string | Description brute Figma |
+| `vc` | integer | Nombre de variants |
+| `dv` | string | Configuration du variant par défaut |
+| `tokens` | array | Liste plate de tokens |
+| `meta` | object | `{ nid, pid }` |
+| `_stats` | object | Statistiques d'extraction |
+| `_extracted_at` | datetime | Timestamp ISO |
+
+**Exemple :**
 ```json
 {
   "component": "Billboard",
-  "figmaId": "aem.billboard",
+  "figma_ids": ["aem.billboard"],
   "title": "💠 aem.billboard",
-  "description": "...",
   "vc": 12,
   "dv": "breakpoint=mobile, type=default",
-  "props": { ... },
-  "anatomy": { ... },
-  "variant_diffs": [ ... ],
-  "tokens": [ "path/to/token", ... ],
+  "tokens": ["breakpoints/wel/sem/sizing/grid/margins", ...],
   "meta": { "nid": "5390:5662", "pid": "64:59" },
   "_extracted_at": "2026-04-01T14:23:08.476Z"
 }
 ```
-
-**Characteristics:**
-- `figmaId` is a **string** (single ID)
-- `tokens` is a **flat array** of token paths
-- `description` is **raw text** from Figma
-- No AI-enriched content
 
 ---
 
@@ -50,7 +67,22 @@ This directory contains JSON schemas for the WDS Fusion Pipeline.
 
 **Purpose:** Validates enriched documentation ready for AI consumption.
 
-**Key fields:**
+**Champs spécifiques AI Content :**
+
+| Champ | Type | Description |
+|-------|------|-------------|
+| `$schema` | string | Référence au schema |
+| `version` | string | Version semver |
+| `intent` | object | Description structurée UX |
+| `composition` | object | `{ requires, allows, forbids }` |
+| `variant_logic` | object | Guide d'utilisation des variants |
+| `rules` | array | Règles Do/Don't |
+| `relationships` | object | Relations entre composants |
+| `context` | object | `{ modality: ["desktop", ...] }` |
+| `tokens` | object | Tokens catégorisés |
+| `metadata` | object | Métadonnées complètes |
+
+**Exemple :**
 ```json
 {
   "$schema": "welcome-ai-ready/ai-content.schema.json",
@@ -59,35 +91,17 @@ This directory contains JSON schemas for the WDS Fusion Pipeline.
   "figma_ids": ["aem.billboard"],
   "intent": {
     "description": "Main promotional molecule for CTAs",
-    "solves": "...",
-    "task_context": [...],
-    "use_when": [...],
-    "avoid_when": [...]
+    "solves": "Driving user engagement",
+    "use_when": ["Promotional content", "Newsletter signup"],
+    "avoid_when": ["Non-promotional content"]
   },
-  "anatomy": { ... },
-  "composition": { "requires": [], "allows": [], "forbids": [] },
-  "props": { ... },
-  "variant_diffs": [ ... ],
-  "variant_logic": { ... },
-  "rules": [ ... ],
-  "relationships": { ... },
-  "invalid_combinations": [ ... ],
-  "context": { "modality": ["desktop", "tablet", "mobile"] },
   "tokens": {
-    "border": [...],
-    "typography": [...],
-    "spacing": [...],
-    "color": [...]
-  },
-  "metadata": { ... }
+    "color": ["colorModes/wel/sem/color/on-surface-hi"],
+    "typography": ["breakpoints/wel/sem/fontSizes/display/lg"],
+    "spacing": ["breakpoints/wel/sem/sizing/grid/margins"]
+  }
 }
 ```
-
-**Characteristics:**
-- `figma_ids` is an **array** (multiple IDs possible)
-- `tokens` is a **categorized object**
-- `intent` contains **structured UX guidance**
-- `rules`, `variant_logic`, `relationships` are **AI-enriched**
 
 ---
 
@@ -95,7 +109,6 @@ This directory contains JSON schemas for the WDS Fusion Pipeline.
 
 | MCP Extraction | AI Content | Transformation |
 |----------------|------------|----------------|
-| `figmaId` (string) | `figma_ids` (array) | Wrap in array |
 | `description` (text) | `intent` (object) | Parse + enrich |
 | `tokens` (array) | `tokens` (object) | Categorize by type |
 | `vc` | `metadata.variant_count` | Move to metadata |
