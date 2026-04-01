@@ -1,0 +1,55 @@
+{
+  "$schema": "welcome-ai-ready/component.schema.json",
+  "version": "2.0.0",
+  "component": "",
+  "figma_ids": [],
+  "intent": {
+    "description": "",
+    "solves": "",
+    "task_context": [],
+    "use_when": [],
+    "avoid_when": []
+  },
+  "anatomy": {},
+  "composition": {
+    "requires": [],
+    "allows": [],
+    "forbids": []
+  },
+  "props": {},
+  "variant_diffs": [],
+  "variant_logic": {},
+  "rules": [],
+  "relationships": {
+    "related": null,
+    "escalates_to": null,
+    "degrades_to": null,
+    "groups_with": null,
+    "replaces": null
+  },
+  "invalid_combinations": [],
+  "context": {
+    "modality": []
+  },
+  "tokens": {
+    "border": [],
+    "typography": [],
+    "spacing": [],
+    "sizing": [],
+    "color": [],
+    "other": []
+  },
+  "metadata": {
+    "figma_source": {
+      "nodeId": "",
+      "pageId": ""
+    },
+    "structural_source": "",
+    "variant_count": 0,
+    "default_variant": "",
+    "variant_diffs_count": 0,
+    "ai_content_source": "",
+    "fusion_date": "",
+    "pipeline_version": ""
+  }
+}
