@@ -1,0 +1,113 @@
+{
+  "component": "Bloc Maps",
+  "figmaId": "aem.bloc-maps",
+  "title": "💠 aem.bloc-maps",
+  "description": "",
+  "vc": 4,
+  "dv": "breakpoint=mobile",
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile",
+      "enum": [
+        "desktop-md",
+        "mobile",
+        "tablet",
+        "desktop-sm"
+      ]
+    }
+  },
+  "anatomy": {
+    "root": {
+      "type": "container",
+      "children": ["Container"],
+      "styles": {
+        "itemSpacing": 12,
+        "fills": "colorModes/wel/sem/color/surface-container-mid",
+        "layoutMode": "VERTICAL",
+        "width": 390,
+        "height": 540
+      }
+    },
+    "Container": {
+      "type": "container",
+      "children": ["💠 web.map", ".button-enlarge", ".base-card-list"],
+      "styles": {
+        "layoutMode": "VERTICAL"
+      }
+    },
+    "💠 web.map": {
+      "type": "instance",
+      "instanceOf": "breakpoint=mobile (320-767)",
+      "children": ["💠 web.media-fixed", "controls", "💠 web.map-pointer"]
+    },
+    "💠 web.media-fixed": {
+      "type": "instance",
+      "instanceOf": "type=image",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/neutral-container",
+        "borderRadius": "breakpoints/wel/sem/borderRadius/surface"
+      }
+    },
+    ".button-enlarge": {
+      "type": "instance",
+      "instanceOf": ":state=default",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/surface-container-hi",
+        "borderRadius": "breakpoints/wel/sem/borderRadius/element/full"
+      }
+    },
+    "💠 web.map-pointer": {
+      "type": "instance",
+      "instanceOf": "type=brand, :state=default",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/surface-container-hi",
+        "strokes": "colorModes/wel/sem/color/primary"
+      }
+    },
+    ".base-card-list": {
+      "type": "instance",
+      "instanceOf": "breakpoint=mobile",
+      "children": ["💠 aem.card-hotel"]
+    },
+    "💠 aem.card-hotel": {
+      "type": "instance",
+      "instanceOf": ":breakpoint=mobile, state=default",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/surface-container-low",
+        "strokes": "colorModes/wel/sem/color/outline-low"
+      }
+    }
+  },
+  "variant_diffs": [],
+  "tokens": [
+    "borders/wel/sem/borderWidth/default",
+    "borders/wel/sem/borderWidth/strong",
+    "breakpoints/wel/comp/mapPointer/radius",
+    "breakpoints/wel/sem/borderRadius/container-low",
+    "breakpoints/wel/sem/borderRadius/element/full",
+    "breakpoints/wel/sem/borderRadius/element/interactive-high",
+    "breakpoints/wel/sem/borderRadius/surface",
+    "breakpoints/wel/sem/sizing/grid/margins",
+    "breakpoints/wel/sem/spacingDynamic/inset/xl",
+    "colorModes/wel/sem/color/gradient-black-min",
+    "colorModes/wel/sem/color/neutral-container",
+    "colorModes/wel/sem/color/on-primary",
+    "colorModes/wel/sem/color/outline-low",
+    "colorModes/wel/sem/color/overlay-low",
+    "colorModes/wel/sem/color/overlay-mid",
+    "colorModes/wel/sem/color/primary",
+    "colorModes/wel/sem/color/shadow-default",
+    "colorModes/wel/sem/color/surface",
+    "colorModes/wel/sem/color/surface-container-hi",
+    "colorModes/wel/sem/color/surface-container-low",
+    "colorModes/wel/sem/color/surface-container-mid",
+    "colorModes/wel/sem/number/shadow-blur"
+  ],
+  "invalid_combinations": [],
+  "meta": {
+    "nid": "26639:30964",
+    "pid": "25028:172"
+  },
+  "_extracted_at": "2026-04-01T14:23:11.030Z"
+}

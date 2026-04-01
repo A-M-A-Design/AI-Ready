@@ -1,0 +1,164 @@
+{
+  "component": "Billboard",
+  "figmaId": "aem.billboard",
+  "title": "💠 aem.billboard",
+  "description": "Overview\n\nBillboards is the main promotional molecule.\nIt can be used for promotional content, newsletter, loyalty push.\nHe promotes content for users to call to action.\n\nBehaviour\n\nCan display text, image, list or very simple form\nCan have 1 or 2 button(s)\nDisplayed full grid with emphasis\n\nDo / Don't\n\n✅ Respect color systems for the backgrounds\n\n❌ Don't overwhelm user with too many billboards on the same page\n❌ Do not use for non-promotional content\n❌ Do not put them underneath each other\n❌ Full width display is deprecated\n\nContent guidelines\n\nBillboards should:\nBe as short as possible, especially for the title text.\nUse eye-catching phrases, with key information for the user.\nKeep the description text to 150 characters maximum.\nFollow button label guidelines.",
+  "vc": 12,
+  "dv": "breakpoint=mobile (320-767), type=default",
+  "props": {
+    "kicker": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "kicker",
+        "affects": "visible"
+      }
+    },
+    "title": {
+      "type": "string",
+      "default": "Billboard title",
+      "binding": {
+        "element": "title",
+        "affects": "content"
+      }
+    },
+    "description": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "description",
+        "affects": "visible"
+      }
+    },
+    "button 2": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "button 2",
+        "affects": "visible"
+      }
+    },
+    "action": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "action",
+        "affects": "visible"
+      }
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "form",
+        "list"
+      ]
+    }
+  },
+  "anatomy": {
+    "root": {
+      "type": "container",
+      "children": ["wrapper"],
+      "styles": {
+        "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+        "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+        "layoutMode": "VERTICAL",
+        "width": 375,
+        "height": 396
+      }
+    },
+    "texts": {
+      "type": "container",
+      "parent": "wrapper",
+      "children": ["heading", "description"],
+      "styles": {
+        "itemSpacing": 16,
+        "layoutMode": "VERTICAL"
+      }
+    },
+    "heading": {
+      "type": "container",
+      "parent": "texts",
+      "children": ["kicker", "title"],
+      "styles": {
+        "itemSpacing": 8,
+        "layoutMode": "VERTICAL"
+      }
+    },
+    "kicker": {
+      "type": "text",
+      "parent": "heading",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/on-surface-low",
+        "fontSize": "breakpoints/wel/sem/fontSizes/detail"
+      }
+    },
+    "title": {
+      "type": "text",
+      "parent": "heading",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/on-surface-hi",
+        "fontSize": "breakpoints/wel/sem/fontSizes/display/lg"
+      }
+    },
+    "description": {
+      "type": "text",
+      "parent": "texts",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/on-surface-mid",
+        "fontSize": "breakpoints/wel/sem/fontSizes/body/md"
+      }
+    },
+    "action": {
+      "type": "container",
+      "parent": "wrapper",
+      "children": ["💠 web.button-bb"],
+      "styles": {
+        "itemSpacing": 16,
+        "layoutMode": "VERTICAL"
+      }
+    },
+    "💠 web.button-bb": {
+      "type": "instance",
+      "instanceOf": "size=md, function=tertiary, :state=default",
+      "styles": {
+        "fills": "colorModes/wel/comp/btn/tertiary/bg-color",
+        "strokes": "colorModes/wel/comp/btn/tertiary/border-color"
+      }
+    }
+  },
+  "variant_diffs": [],
+  "tokens": [
+    "breakpoints/wel/sem/borderRadius/element/interactive-high",
+    "breakpoints/wel/sem/borderWidth/default",
+    "breakpoints/wel/sem/fontFamilies/body",
+    "breakpoints/wel/sem/fontFamilies/detail",
+    "breakpoints/wel/sem/fontFamilies/display",
+    "breakpoints/wel/sem/fontSizes/body/md",
+    "breakpoints/wel/sem/fontSizes/detail",
+    "breakpoints/wel/sem/fontSizes/display/lg",
+    "breakpoints/wel/sem/sizing/grid/margins",
+    "colorModes/wel/comp/btn/tertiary/bg-color",
+    "colorModes/wel/comp/btn/tertiary/border-color",
+    "colorModes/wel/sem/color/on-surface-hi",
+    "colorModes/wel/sem/color/on-surface-low",
+    "colorModes/wel/sem/color/on-surface-mid"
+  ],
+  "invalid_combinations": [],
+  "meta": {
+    "nid": "5390:5662",
+    "pid": "64:59"
+  },
+  "_extracted_at": "2026-04-01T14:23:08.476Z"
+}

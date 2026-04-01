@@ -1,0 +1,161 @@
+{
+  "component": "Billboard Image",
+  "figmaId": "aem.billboard-image",
+  "title": "💠 aem.billboard-image",
+  "description": "",
+  "vc": 7,
+  "dv": "breakpoint=mobile (320-767), image-position=left",
+  "props": {
+    "action": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "action",
+        "affects": "visible"
+      }
+    },
+    "button 2": {
+      "type": "boolean",
+      "default": false,
+      "binding": {
+        "element": "button 2",
+        "affects": "visible"
+      }
+    },
+    "title": {
+      "type": "string",
+      "default": "Billboard title",
+      "binding": {
+        "element": "title",
+        "affects": "content"
+      }
+    },
+    "kicker": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "kicker",
+        "affects": "visible"
+      }
+    },
+    "-> brand": {
+      "type": "instance_swap",
+      "default": "26980:2398",
+      "binding": {
+        "element": "brand",
+        "affects": "mainComponent"
+      }
+    },
+    "logo": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "logo",
+        "affects": "visible"
+      }
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "image-position": {
+      "type": "string",
+      "default": "left",
+      "enum": [
+        "left",
+        "right"
+      ]
+    }
+  },
+  "anatomy": {
+    "root": {
+      "type": "container",
+      "children": ["wrapper"],
+      "styles": {
+        "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+        "layoutMode": "VERTICAL",
+        "width": 375,
+        "height": 543
+      }
+    },
+    "wrapper": {
+      "type": "container",
+      "parent": "root",
+      "children": ["media", "logo", "texts+action"],
+      "styles": {
+        "itemSpacing": 24,
+        "fills": "colorModes/wel/sem/color/surface-container-mid",
+        "layoutMode": "VERTICAL"
+      }
+    },
+    "media": {
+      "type": "instance",
+      "instanceOf": "type=image",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/neutral-container",
+        "borderRadius": "breakpoints/wel/sem/borderRadius/container-low"
+      }
+    },
+    "logo": {
+      "type": "instance",
+      "instanceOf": "type=type-monochrome",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/surface-container-low",
+        "borderRadius": "breakpoints/wel/sem/borderRadius/element/static-md"
+      }
+    },
+    "texts+action": {
+      "type": "container",
+      "children": ["content", "action"],
+      "styles": {
+        "itemSpacing": 24,
+        "layoutMode": "VERTICAL"
+      }
+    },
+    "content": {
+      "type": "container",
+      "children": ["title", "description"],
+      "styles": {
+        "itemSpacing": 16,
+        "layoutMode": "VERTICAL"
+      }
+    },
+    "action": {
+      "type": "container",
+      "children": ["💠 web.button-bb"],
+      "styles": {
+        "itemSpacing": 16,
+        "layoutMode": "VERTICAL"
+      }
+    }
+  },
+  "variant_diffs": [],
+  "tokens": [
+    "breakpoints/wel/sem/borderRadius/container-low",
+    "breakpoints/wel/sem/borderRadius/element/static-md",
+    "breakpoints/wel/sem/borderRadius/surface",
+    "breakpoints/wel/sem/spacingDynamic/inset/5xl",
+    "colorModes/wel/sem/color/gradient-black-min",
+    "colorModes/wel/sem/color/neutral-container",
+    "colorModes/wel/sem/color/overlay-low",
+    "colorModes/wel/sem/color/overlay-mid",
+    "colorModes/wel/sem/color/surface-container-low",
+    "colorModes/wel/sem/color/surface-container-mid"
+  ],
+  "invalid_combinations": {
+    "theoretical": 8,
+    "actual": 7,
+    "missing": 1
+  },
+  "meta": {
+    "nid": "5419:69031",
+    "pid": "64:59"
+  },
+  "_extracted_at": "2026-04-01T14:23:08.879Z"
+}
