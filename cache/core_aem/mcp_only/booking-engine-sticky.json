@@ -1,10 +1,8 @@
 {
   "component": "Booking Engine Sticky",
-  "figmaId": "aem.booking-engine-sticky",
+  "figma_ids": ["aem.booking-engine-sticky"],
   "title": "💠 aem.booking-engine-sticky",
   "description": "Overview\n\n\nThe sticky bar with \"see rates\" button lets users display the search engine while browsing content on home page and landing pages. \n\n\nDisplay\n\n\nThe bar is showing up while scrolling up and down the page when the search engine goes out of the browser window.\n\n\nAction\n\n\nClicking/tapping the button displays the search-engine in a modal over the page.",
-  "vc": 8,
-  "dv": "breakpoint=mobile (320-767), :state=idle",
   "props": {
     "breakpoint": {
       "type": "string",
@@ -179,7 +177,20 @@
     "colorModes/wel/sem/color/surface-container-low",
     "colorModes/wel/sem/number/shadow-blur"
   ],
-  "meta": {"nid": "25393:101389", "pid": "25409:134835"},
-  "_stats": {"aliases": 37, "resolved": 37, "instances": 31, "resolvedInstances": 31},
-  "_extracted_at": "2026-04-01T14:54:48.418Z"
+  "metadata": {
+    "figma_source": {
+      "nodeId": "25393:101389",
+      "pageId": "25409:134835"
+    },
+    "variant_count": 8,
+    "default_variant": "breakpoint=mobile (320-767), :state=idle",
+    "extracted_at": "2026-04-01T14:54:48.418Z",
+    "extractor_version": "mcp_v6.2",
+    "stats": {
+      "aliases": 37,
+      "resolved": 37,
+      "instances": 31,
+      "resolvedInstances": 31
+    }
+  }
 }

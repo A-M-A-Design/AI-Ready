@@ -1,10 +1,8 @@
 {
   "component": "Booking Engine Next Version Light",
-  "figmaId": "aem.booking-engine-next-version-light",
+  "figma_ids": ["aem.booking-engine-next-version-light"],
   "title": "💠 aem.booking-engine-next-version-light",
   "description": "",
-  "vc": 8,
-  "dv": "display=default, breakpoint=mobile (320-767)",
   "props": {
     "display": {
       "type": "string",
@@ -220,7 +218,20 @@
     "colorModes/wel/sem/color/shadow-default",
     "colorModes/wel/sem/color/surface"
   ],
-  "meta": {"nid": "25393:102613", "pid": "25393:98490"},
-  "_stats": {"aliases": 42, "resolved": 42, "instances": 33, "resolvedInstances": 33},
-  "_extracted_at": "2026-04-01T14:56:08.333Z"
+  "metadata": {
+    "figma_source": {
+      "nodeId": "25393:102613",
+      "pageId": "25393:98490"
+    },
+    "variant_count": 8,
+    "default_variant": "display=default, breakpoint=mobile (320-767)",
+    "extracted_at": "2026-04-01T14:56:08.333Z",
+    "extractor_version": "mcp_v6.2",
+    "stats": {
+      "aliases": 42,
+      "resolved": 42,
+      "instances": 33,
+      "resolvedInstances": 33
+    }
+  }
 }
