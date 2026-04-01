@@ -1,10 +1,8 @@
 {
   "component": "Booking Engine Aem Full Option",
-  "figmaId": "aem.booking-engine-aem-full-option",
+  "figma_ids": ["aem.booking-engine-aem-full-option"],
   "title": "💠 aem.booking-engine-aem-full-option",
   "description": "",
-  "vc": 6,
-  "dv": "breakpoint=mobile (320-767), display=form",
   "props": {
     "country cities & hotels hide": {"type": "boolean", "default": true, "binding": {"element": "country cities & hotels hide", "affects": "visible"}},
     "loyalty benefits activation": {"type": "boolean", "default": false, "binding": {"element": "loyalty benefits activation", "affects": "visible"}},
@@ -118,7 +116,19 @@
     "colorModes/wel/sem/color/surface-container-hi",
     "colorModes/wel/sem/color/surface-container-low"
   ],
-  "meta": {"nid": "25393:100656", "pid": "25466:237504"},
-  "_stats": {"aliases": 93, "resolved": 93, "instances": 150},
-  "_extracted_at": "2026-04-01T14:37:05.052Z"
+  "metadata": {
+    "figma_source": {
+      "nodeId": "25393:100656",
+      "pageId": "25466:237504"
+    },
+    "variant_count": 6,
+    "default_variant": "breakpoint=mobile (320-767), display=form",
+    "extracted_at": "2026-04-01T14:37:05.052Z",
+    "extractor_version": "mcp_v6.2",
+    "stats": {
+      "aliases": 93,
+      "resolved": 93,
+      "instances": 150
+    }
+  }
 }
