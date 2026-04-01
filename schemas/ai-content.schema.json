@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "welcome-ai-ready/ai-content.schema.json",
+  "title": "WDS AI Content Schema",
+  "description": "JSON Schema for AI-enriched component documentation (ai_ready/ files)",
+  "type": "object",
+  "required": [
+    "$schema",
+    "version",
+    "component",
+    "figma_ids",
+    "intent",
+    "anatomy",
+    "composition",
+    "props",
+    "variant_diffs",
+    "variant_logic",
+    "rules",
+    "relationships",
+    "invalid_combinations",
+    "context",
+    "tokens",
+    "metadata"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "welcome-ai-ready/ai-content.schema.json",
+      "description": "Reference to this schema"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version of the documentation format"
+    },
+    "component": {
+      "type": "string",
+      "description": "Human-readable component name"
+    },
+    "figma_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Figma component IDs (e.g., ['aem.billboard', 'web.billboard'])"
+    },
+    "intent": {
+      "type": "object",
+      "required": ["description", "solves", "task_context", "use_when", "avoid_when"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "One-line purpose of the component"
+        },
+        "solves": {
+          "type": "string",
+          "description": "UX problem this component addresses"
+        },
+        "task_context": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Categories/contexts where component is applicable"
+        },
+        "use_when": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Recommended usage scenarios"
+        },
+        "avoid_when": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Scenarios to avoid using this component"
+        }
+      }
+    },
+    "anatomy": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/anatomyElement"
+      },
+      "description": "Hierarchical structure of component elements (from MCP extraction)"
+    },
+    "composition": {
+      "type": "object",
+      "required": ["requires", "allows", "forbids"],
+      "properties": {
+        "requires": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Mandatory child components or elements"
+        },
+        "allows": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional child components or elements"
+        },
+        "forbids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Prohibited compositions"
+        }
+      }
+    },
+    "props": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/propDefinition"
+      },
+      "description": "Component properties with usage descriptions"
+    },
+    "variant_diffs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/variantDiff"
+      },
+      "description": "Style changes per variant (from MCP extraction)"
+    },
+    "variant_logic": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "use_when": { "type": "string" }
+          }
+        }
+      },
+      "description": "AI-generated guidance on when to use each variant value"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rule"
+      },
+      "description": "Usage guidelines and best practices (AI content)"
+    },
+    "relationships": {
+      "type": "object",
+      "required": ["related", "escalates_to", "degrades_to", "groups_with", "replaces"],
+      "properties": {
+        "related": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "escalates_to": {
+          "type": ["string", "null"]
+        },
+        "degrades_to": {
+          "type": ["string", "null"]
+        },
+        "groups_with": {
+          "type": ["string", "array", "null"]
+        },
+        "replaces": {
+          "type": ["string", "null"]
+        }
+      },
+      "description": "Component relationships (AI content)"
+    },
+    "invalid_combinations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "props": { "type": "object" },
+          "reason": { "type": "string" }
+        }
+      },
+      "description": "Prop combinations that should not be used"
+    },
+    "context": {
+      "type": "object",
+      "required": ["modality"],
+      "properties": {
+        "modality": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["desktop", "tablet", "mobile"]
+          }
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "properties": {
+        "border": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "typography": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "spacing": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "sizing": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "color": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "other": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "description": "Design tokens categorized by type"
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "figma_source",
+        "structural_source",
+        "variant_count",
+        "default_variant",
+        "variant_diffs_count",
+        "ai_content_source",
+        "fusion_date",
+        "pipeline_version"
+      ],
+      "properties": {
+        "figma_source": {
+          "type": "object",
+          "properties": {
+            "nodeId": { "type": "string" },
+            "pageId": { "type": "string" }
+          }
+        },
+        "structural_source": {
+          "type": "string",
+          "description": "Extraction method (e.g., 'mcp_v6.2')"
+        },
+        "variant_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "default_variant": {
+          "type": "string"
+        },
+        "variant_diffs_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ai_content_source": {
+          "type": "string",
+          "description": "Source of AI/UX content (e.g., 'supernova', 'manual')"
+        },
+        "fusion_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "pipeline_version": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "anatomyElement": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["container", "instance", "text", "vector"]
+        },
+        "parent": { "type": "string" },
+        "children": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "instanceOf": { "type": "string" },
+        "styles": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "propDefinition": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["string", "boolean", "instance_swap"]
+        },
+        "default": {},
+        "enum": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "binding": {
+          "type": "object",
+          "properties": {
+            "element": { "type": "string" },
+            "affects": {
+              "type": "string",
+              "enum": ["visible", "content", "mainComponent"]
+            }
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "AI-generated usage description"
+        }
+      }
+    },
+    "variantDiff": {
+      "type": "object",
+      "required": ["configuration", "changes"],
+      "properties": {
+        "configuration": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "changes": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "required": ["rule", "description", "severity"],
+      "properties": {
+        "rule": { "type": "string" },
+        "description": { "type": "string" },
+        "severity": {
+          "type": "string",
+          "enum": ["do", "dont", "caution"]
+        }
+      }
+    }
+  }
+}

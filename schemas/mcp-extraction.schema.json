@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "welcome-ai-ready/mcp-extraction.schema.json",
+  "title": "WDS MCP Extraction Schema",
+  "description": "JSON Schema for raw Figma component extraction via MCP (mcp_only/ files)",
+  "type": "object",
+  "required": [
+    "component",
+    "figmaId",
+    "title",
+    "vc",
+    "dv",
+    "props",
+    "anatomy",
+    "tokens",
+    "meta",
+    "_extracted_at"
+  ],
+  "properties": {
+    "component": {
+      "type": "string",
+      "description": "Human-readable component name (e.g., 'Billboard', 'Card Hotel')"
+    },
+    "figmaId": {
+      "type": "string",
+      "pattern": "^(aem|web)\\.[a-z0-9-]+$",
+      "description": "Figma component ID with prefix (e.g., 'aem.billboard', 'web.button-bb')"
+    },
+    "title": {
+      "type": "string",
+      "description": "Figma node title (usually with 💠 prefix)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Raw description from Figma component (may be empty)"
+    },
+    "vc": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Variant count - number of variants in the component set"
+    },
+    "dv": {
+      "type": "string",
+      "description": "Default variant configuration string (e.g., 'breakpoint=mobile, type=default')"
+    },
+    "props": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/propDefinition"
+      },
+      "description": "Component properties extracted from Figma"
+    },
+    "anatomy": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/anatomyElement"
+      },
+      "description": "Hierarchical structure of component elements"
+    },
+    "variant_diffs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/variantDiff"
+      },
+      "description": "Style changes per variant configuration vs. default"
+    },
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Flat list of design token paths used by the component"
+    },
+    "invalid_combinations": {
+      "oneOf": [
+        { "type": "array" },
+        {
+          "type": "object",
+          "properties": {
+            "theoretical": { "type": "integer" },
+            "actual": { "type": "integer" },
+            "missing": { "type": "integer" }
+          }
+        }
+      ],
+      "description": "Invalid prop combinations or variant gap analysis"
+    },
+    "meta": {
+      "type": "object",
+      "required": ["nid"],
+      "properties": {
+        "nid": {
+          "type": "string",
+          "pattern": "^[0-9]+:[0-9]+$",
+          "description": "Figma node ID"
+        },
+        "pid": {
+          "type": "string",
+          "pattern": "^[0-9]+:[0-9]+$",
+          "description": "Figma parent/page ID"
+        }
+      },
+      "description": "Figma metadata"
+    },
+    "_stats": {
+      "type": "object",
+      "properties": {
+        "aliases": { "type": "integer" },
+        "resolved": { "type": "integer" },
+        "instances": { "type": "integer" },
+        "resolvedInstances": { "type": "integer" }
+      },
+      "description": "Extraction statistics (optional)"
+    },
+    "_extracted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO timestamp of extraction"
+    }
+  },
+  "$defs": {
+    "propDefinition": {
+      "type": "object",
+      "required": ["type", "default"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["string", "boolean", "instance_swap"],
+          "description": "Property type"
+        },
+        "default": {
+          "description": "Default value"
+        },
+        "enum": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "For string props: allowed values"
+        },
+        "binding": {
+          "type": "object",
+          "properties": {
+            "element": { "type": "string" },
+            "affects": {
+              "type": "string",
+              "enum": ["visible", "content", "mainComponent"]
+            }
+          },
+          "description": "How this prop binds to an element"
+        }
+      }
+    },
+    "anatomyElement": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["container", "instance", "text", "vector"],
+          "description": "Element type"
+        },
+        "parent": {
+          "type": "string",
+          "description": "Parent element name"
+        },
+        "children": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Child element names"
+        },
+        "instanceOf": {
+          "type": "string",
+          "description": "For instances: the component variant being instantiated"
+        },
+        "styles": {
+          "type": "object",
+          "additionalProperties": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "number" },
+              { "type": "boolean" }
+            ]
+          },
+          "description": "Design token references or raw values"
+        }
+      }
+    },
+    "variantDiff": {
+      "type": "object",
+      "required": ["configuration", "changes"],
+      "properties": {
+        "configuration": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Variant axis values that trigger these changes"
+        },
+        "changes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "Style changes per element"
+        }
+      }
+    }
+  }
+}
