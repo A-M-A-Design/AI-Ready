@@ -1,0 +1,317 @@
+{
+  "component": "Booking Engine Aem Light",
+  "figmaId": "aem.booking-engine-aem-light",
+  "title": "💠 aem.booking-engine-aem-light",
+  "description": "",
+  "vc": 6,
+  "dv": "breakpoint=mobile (320-767), display=form",
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "desktop-md (1280-1439)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "default": "form",
+      "enum": [
+        "button",
+        "form"
+      ]
+    }
+  },
+  "anatomy": {
+    "root": {
+      "type": "container",
+      "children": ["wrapper"],
+      "styles": {
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "CENTER",
+        "width": 375,
+        "height": 392
+      }
+    },
+    "wrapper": {
+      "type": "container",
+      "parent": "💠 web.button-bb",
+      "children": ["label"],
+      "styles": {
+        "paddingLeft": 4,
+        "paddingRight": 4,
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "itemSpacing": 10,
+        "width": 58,
+        "height": 24
+      }
+    },
+    "search + special-rates": {
+      "type": "container",
+      "parent": "wrapper",
+      "children": ["search", "special-rates"],
+      "styles": {
+        "itemSpacing": 20,
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 343,
+        "height": 316
+      }
+    },
+    "search": {
+      "type": "container",
+      "parent": "search + special-rates",
+      "children": ["💠 web.input-text", "💠 web.date-picker", "💠 web.input-text"],
+      "styles": {
+        "itemSpacing": 16,
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "MAX",
+        "counterAxisAlignItems": "MIN",
+        "width": 343,
+        "height": 272
+      }
+    },
+    "💠 web.input-text": {
+      "type": "instance",
+      "parent": "search",
+      "children": ["label+assistive", ".base.input"],
+      "instanceOf": ":state=default",
+      "styles": {
+        "itemSpacing": 8,
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 343,
+        "height": 80
+      }
+    },
+    "💠 web.date-picker": {
+      "type": "instance",
+      "parent": "search",
+      "children": ["base-input", "wrapper", "wrapper"],
+      "instanceOf": "breakpoint=desktop",
+      "styles": {
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 343,
+        "height": 80
+      }
+    },
+    "special-rates": {
+      "type": "container",
+      "parent": "search + special-rates",
+      "children": ["💠 web.link"],
+      "styles": {
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "itemSpacing": 24,
+        "width": 343,
+        "height": 24
+      }
+    },
+    "💠 web.link": {
+      "type": "instance",
+      "parent": "special-rates",
+      "children": ["left-icon", "link label", "💠 chevron-down-24"],
+      "instanceOf": "size=default, variant=icon, :state=default",
+      "styles": {
+        "itemSpacing": 4,
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "CENTER",
+        "width": 120,
+        "height": 24
+      }
+    },
+    "💠 web.button-bb": {
+      "type": "instance",
+      "parent": "wrapper",
+      "children": ["left-icon", "wrapper", "right-icon"],
+      "instanceOf": "size=lg, function=primary, :state=default",
+      "styles": {
+        "paddingLeft": 20,
+        "paddingTop": 16,
+        "paddingRight": 20,
+        "paddingBottom": 16,
+        "topLeftRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "topRightRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "bottomRightRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+        "fills": "colorModes/wel/comp/btn/primary/bg-gradient-start",
+        "strokes": "colorModes/wel/comp/btn/primary/border-color",
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "width": 343,
+        "height": 56
+      }
+    },
+    "left-icon": {
+      "type": "instance",
+      "parent": "💠 web.button-bb",
+      "children": ["Vector"],
+      "instanceOf": "arrow-right-24",
+      "styles": {
+        "width": 24,
+        "height": 24,
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "visible": false
+      }
+    },
+    "Vector": {
+      "type": "vector",
+      "parent": "right-icon",
+      "styles": {
+        "fills": "colorModes/wel/comp/btn/primary/fg-color",
+        "width": 18,
+        "height": 14
+      }
+    },
+    "label": {
+      "type": "text",
+      "parent": "wrapper",
+      "styles": {
+        "fills": "colorModes/wel/comp/btn/primary/fg-color",
+        "letterSpacing": "breakpoints/wel/sem/letterSpacing/label",
+        "fontSize": "breakpoints/wel/sem/fontSizes/label/lg",
+        "fontStyle": "breakpoints/wel/sem/fontWeights/label/default",
+        "fontFamily": "breakpoints/wel/sem/fontFamilies/label",
+        "lineHeight": "breakpoints/wel/sem/lineHeights/label/lg",
+        "width": 50,
+        "height": 24
+      }
+    },
+    "right-icon": {
+      "type": "instance",
+      "parent": "💠 web.button-bb",
+      "children": ["Vector"],
+      "instanceOf": "arrow-right-24",
+      "styles": {
+        "width": 24,
+        "height": 24,
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "visible": false
+      }
+    }
+  },
+  "variant_diffs": [
+    {
+      "configuration": {"breakpoint": "desktop-md (1280-1439)"},
+      "changes": {
+        "root": {"paddingLeft": 64, "paddingRight": 64, "topLeftRadius": "breakpoints/wel/sem/borderRadius/surface", "topRightRadius": "breakpoints/wel/sem/borderRadius/surface", "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/surface", "bottomRightRadius": "breakpoints/wel/sem/borderRadius/surface", "width": 1340, "height": 180},
+        "search": {"itemSpacing": 20, "layoutMode": "HORIZONTAL", "primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MAX", "width": 1156, "height": 80},
+        "💠 web.input-text": {"width": 182},
+        "label+assistive": {"layoutMode": "VERTICAL", "primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MIN", "width": 182, "height": 24, "_added": true},
+        ".base.input": {"itemSpacing": 8, "paddingLeft": 16, "paddingTop": 12, "paddingRight": 16, "paddingBottom": 12, "topLeftRadius": "breakpoints/wel/sem/borderRadius/input", "topRightRadius": "breakpoints/wel/sem/borderRadius/input", "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/input", "bottomRightRadius": "breakpoints/wel/sem/borderRadius/input", "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default", "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default", "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default", "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default", "fills": "colorModes/wel/sem/color/surface-container-low", "strokes": "colorModes/wel/sem/color/outline-hi", "layoutMode": "HORIZONTAL", "primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MIN", "width": 182, "height": 48, "_added": true},
+        "💠 web.date-picker": {"width": 220},
+        "base-input": {"itemSpacing": 8, "layoutMode": "VERTICAL", "primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MIN", "width": 220, "height": 80, "_added": true},
+        "💠 web.button-bb": {"width": 98},
+        "special-rates": {"primaryAxisAlignItems": "CENTER", "counterAxisAlignItems": "CENTER", "width": 1156},
+        "💠 web.separator": {"fills": "colorModes/wel/sem/color/outline-low", "primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MIN", "width": 494, "height": 1, "_added": true},
+        "link label": {"fills": "colorModes/wel/sem/color/link", "letterSpacing": "breakpoints/wel/sem/letterSpacing/link", "fontSize": "breakpoints/wel/sem/fontSizes/link/md", "fontStyle": "breakpoints/wel/sem/fontWeights/link", "fontFamily": "breakpoints/wel/sem/fontFamilies/link", "lineHeight": "breakpoints/wel/sem/lineHeights/link/md", "width": 92, "height": 24, "_added": true},
+        "💠 chevron-down-24": {"primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MIN", "width": 24, "height": 24, "_added": true},
+        "search + special-rates": {"_removed": true},
+        "Vector": {"_removed": true},
+        "label": {"_removed": true}
+      }
+    },
+    {
+      "configuration": {"breakpoint": "desktop-sm (1024-1279)"},
+      "changes": {
+        "root": {"paddingLeft": 32, "paddingRight": 32, "width": 1024, "height": 180},
+        "search": {"itemSpacing": 20, "layoutMode": "HORIZONTAL", "primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MAX", "width": 904, "height": 80},
+        "💠 web.input-text": {"width": 182},
+        "💠 web.date-picker": {"width": 220},
+        "💠 web.button-bb": {"width": 98},
+        "special-rates": {"primaryAxisAlignItems": "CENTER", "counterAxisAlignItems": "CENTER", "width": 904},
+        "search + special-rates": {"_removed": true},
+        "Vector": {"_removed": true},
+        "label": {"_removed": true}
+      }
+    },
+    {
+      "configuration": {"breakpoint": "tablet (768-1023)"},
+      "changes": {
+        "root": {"paddingLeft": 32, "paddingRight": 32, "width": 768, "height": 356},
+        "search": {"itemSpacing": 20, "width": 648, "height": 180},
+        "💠 web.input-text": {"width": 312},
+        "💠 web.date-picker": {"width": 312},
+        "special-rates": {"width": 648},
+        "💠 web.button-bb": {"width": 648},
+        "search + special-rates": {"_removed": true}
+      }
+    },
+    {
+      "configuration": {"display": "button"},
+      "changes": {
+        "root": {"layoutMode": "HORIZONTAL", "primaryAxisAlignItems": "CENTER", "counterAxisAlignItems": "MIN", "height": 56},
+        "wrapper": {"paddingLeft": 16, "paddingTop": 16, "paddingRight": 16, "paddingBottom": 16, "fills": "colorModes/wel/sem/color/surface-container-low", "strokes": "colorModes/wel/sem/color/outline-low", "effects": "colorModes/wel/sem/color/shadow-default", "layoutMode": "VERTICAL", "counterAxisAlignItems": "CENTER", "width": 343, "height": 56},
+        "location": {"itemSpacing": 8, "layoutMode": "HORIZONTAL", "primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "CENTER", "width": 311, "height": 24, "_added": true},
+        "💠 search-24": {"primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MIN", "width": 24, "height": 24, "_added": true},
+        "Vector": {"fills": "colorModes/wel/sem/color/primary", "width": 17, "height": 17},
+        "placeholder": {"fills": "colorModes/wel/sem/color/on-surface-low", "letterSpacing": "breakpoints/wel/sem/letterSpacing/body", "fontSize": "breakpoints/wel/sem/fontSizes/body/md", "fontStyle": "breakpoints/wel/sem/fontWeights/body/default", "fontFamily": "breakpoints/wel/sem/fontFamilies/body", "lineHeight": "breakpoints/wel/sem/lineHeights/body/md", "width": 279, "height": 24, "_added": true},
+        "search + special-rates": {"_removed": true},
+        "search": {"_removed": true},
+        "💠 web.input-text": {"_removed": true},
+        "💠 web.date-picker": {"_removed": true},
+        "special-rates": {"_removed": true},
+        "💠 web.link": {"_removed": true},
+        "💠 web.button-bb": {"_removed": true},
+        "left-icon": {"_removed": true},
+        "label": {"_removed": true},
+        "right-icon": {"_removed": true}
+      }
+    }
+  ],
+  "tokens": [
+    "breakpoints/wel/sem/borderRadius/element/interactive-high",
+    "breakpoints/wel/sem/borderRadius/input",
+    "breakpoints/wel/sem/borderRadius/surface",
+    "breakpoints/wel/sem/borderWidth/default",
+    "breakpoints/wel/sem/fontFamilies/body",
+    "breakpoints/wel/sem/fontFamilies/label",
+    "breakpoints/wel/sem/fontFamilies/link",
+    "breakpoints/wel/sem/fontSizes/body/md",
+    "breakpoints/wel/sem/fontSizes/label/lg",
+    "breakpoints/wel/sem/fontSizes/link/md",
+    "breakpoints/wel/sem/fontWeights/body/default",
+    "breakpoints/wel/sem/fontWeights/label/default",
+    "breakpoints/wel/sem/fontWeights/link",
+    "breakpoints/wel/sem/letterSpacing/body",
+    "breakpoints/wel/sem/letterSpacing/label",
+    "breakpoints/wel/sem/letterSpacing/link",
+    "breakpoints/wel/sem/lineHeights/body/md",
+    "breakpoints/wel/sem/lineHeights/label/lg",
+    "breakpoints/wel/sem/lineHeights/link/md",
+    "colorModes/wel/comp/btn/primary/bg-gradient-start",
+    "colorModes/wel/comp/btn/primary/border-color",
+    "colorModes/wel/comp/btn/primary/fg-color",
+    "colorModes/wel/sem/color/link",
+    "colorModes/wel/sem/color/on-surface-low",
+    "colorModes/wel/sem/color/outline-hi",
+    "colorModes/wel/sem/color/outline-low",
+    "colorModes/wel/sem/color/primary",
+    "colorModes/wel/sem/color/shadow-default",
+    "colorModes/wel/sem/color/surface-container-low"
+  ],
+  "meta": {"nid": "25393:100728", "pid": "25466:237504"},
+  "_stats": {"aliases": 48, "resolved": 48, "instances": 48, "resolvedInstances": 48},
+  "_extracted_at": "2026-04-01T14:53:12.883Z"
+}

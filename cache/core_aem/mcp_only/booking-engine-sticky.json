@@ -1,0 +1,185 @@
+{
+  "component": "Booking Engine Sticky",
+  "figmaId": "aem.booking-engine-sticky",
+  "title": "💠 aem.booking-engine-sticky",
+  "description": "Overview\n\n\nThe sticky bar with \"see rates\" button lets users display the search engine while browsing content on home page and landing pages. \n\n\nDisplay\n\n\nThe bar is showing up while scrolling up and down the page when the search engine goes out of the browser window.\n\n\nAction\n\n\nClicking/tapping the button displays the search-engine in a modal over the page.",
+  "vc": 8,
+  "dv": "breakpoint=mobile (320-767), :state=idle",
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": ["mobile (320-767)", "tablet (768-1023)", "desktop-sm (1024-1279)", "desktop-md (1280-1439)"]
+    },
+    ":state": {
+      "type": "string",
+      "default": "idle",
+      "enum": ["idle", "open"]
+    }
+  },
+  "anatomy": {
+    "root": {
+      "type": "container",
+      "children": [".sticky-bar"],
+      "styles": {
+        "fills": "colorModes/wel/sem/color/surface-container-low",
+        "layoutGrids": "breakpoints/wel/sem/sizing/grid/margins",
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "itemSpacing": 8,
+        "width": 375,
+        "height": 64
+      }
+    },
+    ".sticky-bar": {
+      "type": "instance",
+      "parent": "root",
+      "children": ["wrapper"],
+      "instanceOf": "breakpoint=mobile (320-767), scroll=up, perimeter=brand",
+      "styles": {
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "strokeTopWeight": "borders/wel/sem/borderWidth/default",
+        "strokeBottomWeight": "borders/wel/sem/borderWidth/default",
+        "strokeLeftWeight": "borders/wel/sem/borderWidth/default",
+        "strokeRightWeight": "borders/wel/sem/borderWidth/default",
+        "fills": "colorModes/wel/sem/color/surface",
+        "strokes": "colorModes/wel/sem/color/outline-low",
+        "effects": "colorModes/wel/sem/number/shadow-blur",
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "itemSpacing": 100,
+        "width": 375,
+        "height": 64
+      }
+    },
+    "wrapper": {
+      "type": "container",
+      "parent": "💠 web.button-bb",
+      "children": ["label"],
+      "styles": {
+        "paddingLeft": 4,
+        "paddingRight": 4,
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "itemSpacing": 10,
+        "width": 92,
+        "height": 24
+      }
+    },
+    "💠 web.button-bb": {
+      "type": "instance",
+      "parent": "wrapper",
+      "children": ["left-icon", "wrapper", "right-icon"],
+      "instanceOf": "size=md, function=primary, :state=default",
+      "styles": {
+        "paddingLeft": 16,
+        "paddingTop": 12,
+        "paddingRight": 16,
+        "paddingBottom": 12,
+        "topLeftRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "topRightRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "bottomRightRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+        "fills": "colorModes/wel/comp/btn/primary/bg-gradient-start",
+        "strokes": "colorModes/wel/comp/btn/primary/border-color",
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "width": 343,
+        "height": 48
+      }
+    },
+    "left-icon": {
+      "type": "instance",
+      "parent": "💠 web.button-bb",
+      "children": ["Vector"],
+      "instanceOf": "arrow-right-24",
+      "styles": {
+        "width": 24,
+        "height": 24,
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "visible": false
+      }
+    },
+    "right-icon": {
+      "type": "instance",
+      "parent": "💠 web.button-bb",
+      "children": ["Vector"],
+      "instanceOf": "arrow-right-24",
+      "styles": {
+        "width": 24,
+        "height": 24,
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "visible": false
+      }
+    }
+  },
+  "variant_diffs": [
+    {
+      "configuration": {"breakpoint": "tablet (768-1023)"},
+      "changes": {
+        "root": {"width": 768},
+        ".sticky-bar": {"paddingLeft": 32, "paddingRight": 32, "layoutMode": "VERTICAL", "itemSpacing": 10, "width": 768},
+        "💠 web.button-bb": {"width": 340}
+      }
+    },
+    {
+      "configuration": {"breakpoint": "desktop-md (1280-1439)"},
+      "changes": {
+        "root": {"layoutMode": "HORIZONTAL", "primaryAxisAlignItems": "SPACE_BETWEEN", "itemSpacing": 459, "width": 1340, "height": 80},
+        ".sticky-bar": {"itemSpacing": 24, "paddingLeft": 64, "paddingRight": 64, "width": 1340, "height": 80},
+        "💠 web.button-bb": {"width": 124}
+      }
+    },
+    {
+      "configuration": {"breakpoint": "desktop-sm (1024-1279)"},
+      "changes": {
+        "root": {"primaryAxisAlignItems": "MIN", "counterAxisAlignItems": "MIN", "width": 1024, "height": 80},
+        ".sticky-bar": {"itemSpacing": 24, "paddingLeft": 32, "paddingRight": 32, "width": 1024, "height": 80},
+        "💠 web.button-bb": {"width": 124}
+      }
+    },
+    {
+      "configuration": {":state": "open"},
+      "changes": {
+        "root": {"primaryAxisAlignItems": "MIN", "height": 667},
+        "wrapper": {"width": 93},
+        "💠 web.button-bb": {"fills": "colorModes/wel/comp/btn/tertiary/bg-color", "strokes": "colorModes/wel/comp/btn/tertiary/border-color", "width": 351},
+        ".sticky-bar": {"_removed": true}
+      }
+    }
+  ],
+  "tokens": [
+    "borders/wel/sem/borderWidth/default",
+    "breakpoints/wel/sem/borderRadius/element/interactive-high",
+    "breakpoints/wel/sem/borderWidth/default",
+    "breakpoints/wel/sem/fontFamilies/title",
+    "breakpoints/wel/sem/fontSizes/title/lg",
+    "breakpoints/wel/sem/fontWeights/title",
+    "breakpoints/wel/sem/letterSpacing/title",
+    "breakpoints/wel/sem/lineHeights/title/lg",
+    "breakpoints/wel/sem/sizing/grid/margins",
+    "colorModes/wel/comp/btn/primary/bg-gradient-start",
+    "colorModes/wel/comp/btn/primary/border-color",
+    "colorModes/wel/comp/btn/tertiary/bg-color",
+    "colorModes/wel/comp/btn/tertiary/border-color",
+    "colorModes/wel/sem/color/on-surface-hi",
+    "colorModes/wel/sem/color/outline-low",
+    "colorModes/wel/sem/color/surface",
+    "colorModes/wel/sem/color/surface-container-low",
+    "colorModes/wel/sem/number/shadow-blur"
+  ],
+  "meta": {"nid": "25393:101389", "pid": "25409:134835"},
+  "_stats": {"aliases": 37, "resolved": 37, "instances": 31, "resolvedInstances": 31},
+  "_extracted_at": "2026-04-01T14:54:48.418Z"
+}
