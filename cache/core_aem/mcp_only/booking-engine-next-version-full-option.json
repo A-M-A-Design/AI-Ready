@@ -1,0 +1,2113 @@
+{
+  "component": "Booking Engine Next Version Full Option",
+  "figmaId": "aem.booking-engine-next-version-full-option",
+  "title": "💠 aem.booking-engine-next-version-full-option",
+  "description": "",
+  "vc": 94,
+  "dv": "display=default, breakpoint=desktop-sm (1024-1279), :state=default",
+  "props": {
+    "connect": {
+      "type": "boolean",
+      "default": true,
+      "binding": {
+        "element": "connect",
+        "affects": "visible"
+      }
+    },
+    "display": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "condensed",
+        "default"
+      ]
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "desktop-md (1280-1439)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    ":state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "history",
+        "auto-complete",
+        "no-result",
+        "date-picker",
+        "room",
+        "error-room",
+        "children-room",
+        "error-children-room",
+        "multiroom",
+        "special rates",
+        "error"
+      ]
+    }
+  },
+  "anatomy": {
+    "root": {
+      "type": "container",
+      "children": [
+        ".search-engine",
+        "special-rates"
+      ],
+      "styles": {
+        "itemSpacing": 20,
+        "paddingLeft": 28,
+        "paddingRight": 28,
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 1024,
+        "height": 124
+      }
+    },
+    ".search-engine": {
+      "type": "instance",
+      "parent": "root",
+      "children": [
+        "slots",
+        ".search-button"
+      ],
+      "instanceOf": "type=booking, display=default, breakpoint=desktop-sm (1024-1279)",
+      "styles": {
+        "itemSpacing": 12,
+        "paddingLeft": 12,
+        "paddingTop": 12,
+        "paddingRight": 12,
+        "paddingBottom": 12,
+        "topLeftRadius": "breakpoints/wel/comp/bookingEngine/radius",
+        "topRightRadius": "breakpoints/wel/comp/bookingEngine/radius",
+        "bottomLeftRadius": "breakpoints/wel/comp/bookingEngine/radius",
+        "bottomRightRadius": "breakpoints/wel/comp/bookingEngine/radius",
+        "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+        "fills": "colorModes/wel/sem/color/surface-container-low",
+        "strokes": "colorModes/wel/sem/color/outline-low",
+        "effects": "colorModes/wel/sem/color/shadow-default",
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "CENTER",
+        "width": 968,
+        "height": 80
+      }
+    },
+    "slots": {
+      "type": "container",
+      "parent": ".search-engine",
+      "children": [
+        "autocomplete",
+        "separator",
+        "date picker",
+        "separator",
+        "date picker"
+      ],
+      "styles": {
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "CENTER",
+        "width": 834,
+        "height": 56
+      }
+    },
+    "autocomplete": {
+      "type": "container",
+      "parent": "slots",
+      "children": [
+        "💠 web.autocomplete"
+      ],
+      "styles": {
+        "paddingLeft": 12,
+        "paddingTop": 16,
+        "paddingRight": 12,
+        "paddingBottom": 16,
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "CENTER",
+        "width": 277,
+        "height": 56
+      }
+    },
+    "separator": {
+      "type": "container",
+      "parent": "slots",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/outline-low",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 1,
+        "height": 56
+      }
+    },
+    "date picker": {
+      "type": "container",
+      "parent": "slots",
+      "children": [
+        "container"
+      ],
+      "styles": {
+        "paddingLeft": 12,
+        "paddingTop": 16,
+        "paddingRight": 12,
+        "paddingBottom": 16,
+        "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "CENTER",
+        "width": 277,
+        "height": 56
+      }
+    },
+    ".search-button": {
+      "type": "instance",
+      "parent": ".search-engine",
+      "children": [
+        "💠 web.button-bb"
+      ],
+      "instanceOf": "Emphasis=secondary",
+      "styles": {
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 98,
+        "height": 56
+      }
+    },
+    "💠 web.button-bb": {
+      "type": "instance",
+      "parent": ".search-button",
+      "children": [
+        "left-icon",
+        "wrapper",
+        "right-icon"
+      ],
+      "instanceOf": "size=lg, function=primary, :state=default",
+      "styles": {
+        "paddingLeft": 20,
+        "paddingTop": 16,
+        "paddingRight": 20,
+        "paddingBottom": 16,
+        "topLeftRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "topRightRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "bottomRightRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+        "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+        "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+        "fills": "colorModes/wel/comp/btn/primary/bg-gradient-start",
+        "strokes": "colorModes/wel/comp/btn/primary/border-color",
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "width": 98,
+        "height": 56
+      }
+    },
+    "special-rates": {
+      "type": "container",
+      "parent": "root",
+      "children": [
+        "💠 web.separator",
+        "💠 web.link",
+        "💠 web.separator"
+      ],
+      "styles": {
+        "itemSpacing": 20,
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "width": 968,
+        "height": 24
+      }
+    },
+    "💠 web.separator": {
+      "type": "instance",
+      "parent": "special-rates",
+      "instanceOf": "type=horizontal",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/outline-low",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 404,
+        "height": 1
+      }
+    },
+    "💠 web.link": {
+      "type": "instance",
+      "parent": "special-rates",
+      "children": [
+        "left-icon",
+        "link label",
+        "💠 chevron-down-24"
+      ],
+      "instanceOf": "size=default, variant=icon, :state=default",
+      "styles": {
+        "itemSpacing": 4,
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "CENTER",
+        "width": 120,
+        "height": 24
+      }
+    },
+    "left-icon": {
+      "type": "instance",
+      "parent": "💠 web.link",
+      "children": [
+        "Vector"
+      ],
+      "instanceOf": "arrow-left-24",
+      "styles": {
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "width": 24,
+        "height": 24,
+        "visible": false
+      }
+    },
+    "link label": {
+      "type": "text",
+      "parent": "💠 web.link",
+      "styles": {
+        "fills": "colorModes/wel/sem/color/link",
+        "letterSpacing": "breakpoints/wel/sem/letterSpacing/body",
+        "fontSize": "breakpoints/wel/sem/fontSizes/body/md",
+        "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+        "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+        "lineHeight": "breakpoints/wel/sem/lineHeights/body/md",
+        "width": 92,
+        "height": 24
+      }
+    },
+    "💠 chevron-down-24": {
+      "type": "instance",
+      "parent": "💠 web.link",
+      "children": [
+        "Vector"
+      ],
+      "instanceOf": "chevron-down-24",
+      "styles": {
+        "width": 24,
+        "height": 24,
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN"
+      }
+    }
+  },
+  "variant_diffs": [
+    {
+      "configuration": {
+        ":state": "date-picker"
+      },
+      "changes": {
+        "root": {
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 10
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        ".💠base.option-tablet-desktop": {
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 728,
+          "height": 356,
+          "_added": true
+        },
+        "💠 web.date-picker": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 192,
+          "height": 0,
+          "_added": true
+        },
+        "base-input": {
+          "itemSpacing": 8,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 192,
+          "height": 80,
+          "visible": false,
+          "_added": true
+        },
+        "wrapper": {
+          "paddingTop": 8,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 192,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "history"
+      },
+      "changes": {
+        "root": {
+          "itemSpacing": 4
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "💠 web.separator": {
+          "width": 388
+        },
+        "cursor empty": {
+          "width": 20,
+          "_added": true
+        },
+        ".💠base.option-tablet-desktop": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 420,
+          "height": 361,
+          "_added": true
+        },
+        "Search history": {
+          "itemSpacing": 16,
+          "paddingTop": 16,
+          "paddingBottom": 16,
+          "fills": "colorModes/wel/sem/color/surface",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "width": 420,
+          "height": 361,
+          "_added": true
+        },
+        "header": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "BASELINE",
+          "itemSpacing": 10,
+          "width": 388,
+          "height": 24,
+          "_added": true
+        },
+        "list-option": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 388,
+          "height": 272,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "room"
+      },
+      "changes": {
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "💠 web.separator": {
+          "width": 288
+        },
+        "💠 web.link": {
+          "width": 111
+        },
+        ".💠base.option-tablet-desktop": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 16,
+          "paddingRight": 16,
+          "paddingBottom": 16,
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 320,
+          "height": 269,
+          "_added": true
+        },
+        "title - V2": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 288,
+          "height": 20,
+          "visible": false,
+          "_added": true
+        },
+        "Combien serez-vous ?": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/sm",
+          "width": 137,
+          "height": 20,
+          "_added": true
+        },
+        "slot": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 288,
+          "height": 498,
+          "visible": false,
+          "_added": true
+        },
+        "room 1": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "width": 288,
+          "height": 160,
+          "_added": true
+        },
+        "room 2": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "itemSpacing": 24,
+          "width": 288,
+          "height": 288,
+          "_added": true
+        },
+        "💠 web.icon-slot": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 24,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "link label": {
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/link",
+          "fontSize": "breakpoints/wel/sem/fontSizes/link/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/link",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/link",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/link/md",
+          "width": 83
+        },
+        "💠 plus-24": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "_added": true
+        },
+        "right-icon": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "error-room"
+      },
+      "changes": {
+        "root": {
+          "counterAxisAlignItems": "CENTER",
+          "width": 1040
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1040,
+          "height": 124,
+          "_added": true
+        },
+        ".search-engine": {
+          "width": 984
+        },
+        "slots": {
+          "width": 850
+        },
+        "special-rates": {
+          "width": 984
+        },
+        "💠 web.separator": {
+          "width": 288,
+          "visible": false
+        },
+        "💠 web.link": {
+          "width": 111
+        },
+        ".💠base.option-tablet-desktop": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 16,
+          "paddingRight": 16,
+          "paddingBottom": 16,
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 320,
+          "height": 301,
+          "_added": true
+        },
+        "title": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 288,
+          "height": 20,
+          "visible": false,
+          "_added": true
+        },
+        "Combien serez-vous ?": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/sm",
+          "width": 137,
+          "height": 20,
+          "_added": true
+        },
+        "slot": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 288,
+          "height": 237,
+          "_added": true
+        },
+        "room 1": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "width": 288,
+          "height": 216,
+          "_added": true
+        },
+        "room 2": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "itemSpacing": 24,
+          "width": 288,
+          "height": 272,
+          "visible": false,
+          "_added": true
+        },
+        "💠 plus-24": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "_added": true
+        },
+        "link label": {
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/link",
+          "fontSize": "breakpoints/wel/sem/fontSizes/link/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/link",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/link",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/link/md",
+          "width": 83
+        },
+        "right-icon": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "multiroom"
+      },
+      "changes": {
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "💠 web.separator": {
+          "width": 328
+        },
+        "💠 web.link": {
+          "width": 111
+        },
+        ".💠base.option-tablet-desktop": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 16,
+          "paddingRight": 16,
+          "paddingBottom": 16,
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 360,
+          "height": 802,
+          "_added": true
+        },
+        "title": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 328,
+          "height": 20,
+          "visible": false,
+          "_added": true
+        },
+        "Combien serez-vous ?": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/sm",
+          "width": 137,
+          "height": 20,
+          "_added": true
+        },
+        "slot": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 328,
+          "height": 738,
+          "_added": true
+        },
+        "room 1": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "width": 328,
+          "height": 400,
+          "_added": true
+        },
+        "room 2": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "width": 328,
+          "height": 276,
+          "_added": true
+        },
+        "💠 plus-24": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "_added": true
+        },
+        "link label": {
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/link",
+          "fontSize": "breakpoints/wel/sem/fontSizes/link/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/link",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/link",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/link/md",
+          "width": 83
+        },
+        "right-icon": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "special rates"
+      },
+      "changes": {
+        "root": {
+          "height": 400
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "💠 web.message": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 12,
+          "paddingRight": 16,
+          "paddingBottom": 12,
+          "topLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "topRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "fills": "colorModes/wel/sem/color/accent-container-low",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 48,
+          "_added": true
+        },
+        "border": {
+          "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokes": "colorModes/wel/sem/color/outline-accent",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 48,
+          "visible": false,
+          "_added": true
+        },
+        "💠 listing-24": {
+          "width": 24,
+          "height": 24,
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "_added": true
+        },
+        "Vector": {
+          "fills": "colorModes/wel/sem/color/on-accent-container",
+          "width": 16,
+          "height": 16,
+          "_added": true
+        },
+        "text": {
+          "fills": "colorModes/wel/sem/color/on-accent-container",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/body",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/md",
+          "width": 960,
+          "height": 24,
+          "_added": true
+        },
+        "close": {
+          "width": 24,
+          "height": 24,
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "visible": false,
+          "_added": true
+        },
+        "accessibility option": {
+          "itemSpacing": 8,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "width": 1024,
+          "height": 24,
+          "_added": true
+        },
+        "wrapper": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 10,
+          "paddingTop": 3,
+          "paddingBottom": 3,
+          "width": 18,
+          "height": 24,
+          "_added": true
+        },
+        "checkbox": {
+          "topLeftRadius": "breakpoints/wel/comp/checkbox/radius",
+          "topRightRadius": "breakpoints/wel/comp/checkbox/radius",
+          "bottomLeftRadius": "breakpoints/wel/comp/checkbox/radius",
+          "bottomRightRadius": "breakpoints/wel/comp/checkbox/radius",
+          "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "strokes": "colorModes/wel/sem/color/outline-hi",
+          "width": 18,
+          "height": 18,
+          "_added": true
+        },
+        "💠 web.icon-slot": {
+          "width": 24,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "💠 placeholder": {
+          "width": 24,
+          "height": 24,
+          "fills": "Helper Colors/⚙️ doc/purple-overlay-02",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "_added": true
+        },
+        ".label.checkbox": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 108,
+          "height": 24,
+          "_added": true
+        },
+        "label": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/body",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/md",
+          "width": 108,
+          "height": 24,
+          "_added": true
+        },
+        "option-label": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/body",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/md",
+          "width": 27,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "special rates form": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "itemSpacing": 24,
+          "width": 1024,
+          "height": 144,
+          "_added": true
+        },
+        "travellers rates": {
+          "itemSpacing": 16,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 258,
+          "height": 144,
+          "_added": true
+        },
+        "Voyageurs": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/title",
+          "fontSize": "breakpoints/wel/sem/fontSizes/title/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/title",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/title",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/title/sm",
+          "width": 86,
+          "height": 24,
+          "_added": true
+        },
+        "💠 web.input-text": {
+          "itemSpacing": 8,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 298,
+          "height": 104,
+          "_added": true
+        },
+        "pro travellers": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 16,
+          "width": 420,
+          "height": 140,
+          "_added": true
+        },
+        "Voyageurs professionnels": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/title",
+          "fontSize": "breakpoints/wel/sem/fontSizes/title/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/title",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/title",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/title/sm",
+          "width": 420,
+          "height": 24,
+          "_added": true
+        },
+        "content": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 24,
+          "width": 420,
+          "height": 104,
+          "_added": true
+        },
+        ".promo-code": {
+          "itemSpacing": 16,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 298,
+          "height": 144,
+          "_added": true
+        },
+        "Autres tarifs spéciaux et code promo": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/title",
+          "fontSize": "breakpoints/wel/sem/fontSizes/title/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/title",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/title",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/title/sm",
+          "width": 298,
+          "height": 24,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "error"
+      },
+      "changes": {
+        "root": {
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "height": 120
+        },
+        "💠 web.message": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 12,
+          "paddingRight": 16,
+          "paddingBottom": 12,
+          "topLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "topRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "fills": "colorModes/wel/sem/color/danger-container-low",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 48,
+          "_added": true
+        },
+        "border": {
+          "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokes": "colorModes/wel/sem/color/outline-danger",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 48,
+          "visible": false,
+          "_added": true
+        },
+        "icon": {
+          "width": 24,
+          "height": 24,
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "_added": true
+        },
+        "Vector": {
+          "fills": "colorModes/wel/sem/color/on-danger-container-low",
+          "width": 16,
+          "height": 16,
+          "_added": true
+        },
+        "text": {
+          "fills": "colorModes/wel/sem/color/on-danger-container-low",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/body",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/md",
+          "width": 960,
+          "height": 24,
+          "_added": true
+        },
+        "close": {
+          "width": 24,
+          "height": 24,
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "visible": false,
+          "_added": true
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "children-room"
+      },
+      "changes": {
+        "root": {
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": -179
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "💠 web.separator": {
+          "width": 328,
+          "visible": false
+        },
+        "💠 web.link": {
+          "width": 111
+        },
+        "cursor empty": {
+          "width": 20,
+          "visible": false,
+          "_added": true
+        },
+        ".💠base.option-tablet-desktop": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 16,
+          "paddingRight": 16,
+          "paddingBottom": 16,
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 360,
+          "height": 313,
+          "_added": true
+        },
+        "title": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 328,
+          "height": 20,
+          "visible": false,
+          "_added": true
+        },
+        "Combien serez-vous ?": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/sm",
+          "width": 137,
+          "height": 20,
+          "_added": true
+        },
+        "slot": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 328,
+          "height": 249,
+          "_added": true
+        },
+        "room 1": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "width": 328,
+          "height": 228,
+          "_added": true
+        },
+        "room 2": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "itemSpacing": 24,
+          "width": 328,
+          "height": 272,
+          "visible": false,
+          "_added": true
+        },
+        "💠 plus-24": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "_added": true
+        },
+        "link label": {
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/link",
+          "fontSize": "breakpoints/wel/sem/fontSizes/link/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/link",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/link",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/link/md",
+          "width": 83
+        },
+        "right-icon": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "error-children-room"
+      },
+      "changes": {
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "💠 web.separator": {
+          "width": 328,
+          "visible": false
+        },
+        "💠 web.link": {
+          "width": 111
+        },
+        ".💠base.option-tablet-desktop": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 16,
+          "paddingRight": 16,
+          "paddingBottom": 16,
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 360,
+          "height": 345,
+          "_added": true
+        },
+        "title": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 328,
+          "height": 20,
+          "visible": false,
+          "_added": true
+        },
+        "Combien serez-vous ?": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/sm",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/sm",
+          "width": 137,
+          "height": 20,
+          "_added": true
+        },
+        "slot": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 328,
+          "height": 281,
+          "_added": true
+        },
+        "room 1": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "width": 328,
+          "height": 260,
+          "_added": true
+        },
+        "room 2": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MAX",
+          "itemSpacing": 24,
+          "width": 328,
+          "height": 272,
+          "visible": false,
+          "_added": true
+        },
+        "💠 plus-24": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "_added": true
+        },
+        "link label": {
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/link",
+          "fontSize": "breakpoints/wel/sem/fontSizes/link/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/link",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/link",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/link/md",
+          "width": 83
+        },
+        "right-icon": {
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 24,
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "auto-complete"
+      },
+      "changes": {
+        "root": {
+          "itemSpacing": 4
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "cursor empty": {
+          "width": 20,
+          "_added": true
+        },
+        ".💠base.option-tablet-desktop": {
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 360,
+          "height": 374,
+          "_added": true
+        },
+        "💠 web.popover": {
+          "topLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "topRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "effects": "colorModes/wel/sem/color/shadow-default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 360,
+          "height": 374,
+          "_added": true
+        },
+        "border-focus": {
+          "strokeTopWeight": "breakpoints/wel/sem/borderWidth/strong",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/strong",
+          "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/strong",
+          "strokeRightWeight": "breakpoints/wel/sem/borderWidth/strong",
+          "strokes": "colorModes/wel/sem/color/focus",
+          "width": 360,
+          "height": 374,
+          "_added": true
+        },
+        "web.list-option": {
+          "fills": "colorModes/wel/sem/color/surface-container-hi",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 360,
+          "height": 374,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        ":state": "no-result"
+      },
+      "changes": {
+        "root": {
+          "itemSpacing": 4
+        },
+        "💠 aem.booking-engine-next-version-full-option": {
+          "itemSpacing": 20,
+          "paddingLeft": 28,
+          "paddingRight": 28,
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1024,
+          "height": 124,
+          "_added": true
+        },
+        "cursor empty": {
+          "width": 20,
+          "_added": true
+        },
+        "💠 web.message": {
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 12,
+          "paddingRight": 16,
+          "paddingBottom": 12,
+          "topLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "topRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomLeftRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "bottomRightRadius": "breakpoints/wel/sem/borderRadius/container-high",
+          "fills": "colorModes/wel/sem/color/surface-container-mid",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 320,
+          "height": 48,
+          "_added": true
+        },
+        "border": {
+          "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokes": "colorModes/wel/sem/color/outline-hi",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 320,
+          "height": 48,
+          "visible": false,
+          "_added": true
+        },
+        "💠 no-result": {
+          "width": 24,
+          "height": 24,
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "_added": true
+        },
+        "Vector": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "width": 16,
+          "height": 16,
+          "_added": true
+        },
+        "text": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/body",
+          "fontSize": "breakpoints/wel/sem/fontSizes/body/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/body/strong",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/body",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/body/md",
+          "width": 256,
+          "height": 24,
+          "_added": true
+        },
+        "close": {
+          "width": 24,
+          "height": 24,
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "visible": false,
+          "_added": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "changes": {
+        "root": {
+          "itemSpacing": 24,
+          "paddingLeft": 64,
+          "paddingRight": 64,
+          "width": 1280,
+          "height": 128
+        },
+        ".search-engine": {
+          "width": 1152
+        },
+        "slots": {
+          "width": 1018
+        },
+        "autocomplete": {
+          "width": 416
+        },
+        "date picker": {
+          "width": 300
+        },
+        "special-rates": {
+          "itemSpacing": 24,
+          "width": 1152
+        },
+        "💠 web.separator": {
+          "width": 492
+        },
+        "link label": {
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/link",
+          "fontSize": "breakpoints/wel/sem/fontSizes/link/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/link",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/link",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/link/md"
+        }
+      }
+    },
+    {
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "changes": {
+        "root": {
+          "width": 768
+        },
+        ".search-engine": {
+          "width": 712
+        },
+        "slots": {
+          "width": 578
+        },
+        "autocomplete": {
+          "width": 164
+        },
+        "date picker": {
+          "width": 169
+        },
+        "special-rates": {
+          "itemSpacing": 24,
+          "width": 712
+        },
+        "💠 web.separator": {
+          "width": 272
+        }
+      }
+    },
+    {
+      "configuration": {
+        "breakpoint": "mobile (320-767)"
+      },
+      "changes": {
+        "root": {
+          "width": 375,
+          "height": 344
+        },
+        ".search-engine": {
+          "layoutMode": "VERTICAL",
+          "counterAxisAlignItems": "MIN",
+          "width": 375,
+          "height": 344
+        },
+        "slots-container": {
+          "topLeftRadius": "breakpoints/wel/comp/bookingEngine/radius",
+          "topRightRadius": "breakpoints/wel/comp/bookingEngine/radius",
+          "bottomLeftRadius": "breakpoints/wel/comp/bookingEngine/radius",
+          "bottomRightRadius": "breakpoints/wel/comp/bookingEngine/radius",
+          "strokeTopWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeLeftWeight": "breakpoints/wel/sem/borderWidth/default",
+          "strokeRightWeight": "breakpoints/wel/sem/borderWidth/default",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 20,
+          "width": 375,
+          "height": 344,
+          "_added": true
+        },
+        "form": {
+          "itemSpacing": 20,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 375,
+          "height": 276,
+          "_added": true
+        },
+        ".search-button": {
+          "width": 375,
+          "height": 48
+        },
+        "slots": {
+          "_removed": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        "💠 web.button-bb": {
+          "_removed": true
+        },
+        "special-rates": {
+          "_removed": true
+        },
+        "💠 web.separator": {
+          "_removed": true
+        },
+        "💠 web.link": {
+          "_removed": true
+        },
+        "left-icon": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    },
+    {
+      "configuration": {
+        "display": "condensed"
+      },
+      "changes": {
+        "root": {
+          "itemSpacing": 10,
+          "width": 959,
+          "height": 56
+        },
+        "booking-engine-condensed": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "paddingRight": 12,
+          "width": 959,
+          "height": 56,
+          "_added": true
+        },
+        "destination": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 8,
+          "paddingLeft": 24,
+          "paddingTop": 8,
+          "paddingRight": 16,
+          "paddingBottom": 8,
+          "width": 230,
+          "height": 56,
+          "_added": true
+        },
+        "💠 web.icon-slot": {
+          "width": 24,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "height": 24,
+          "visible": false,
+          "_added": true
+        },
+        "title": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "letterSpacing": "breakpoints/wel/sem/letterSpacing/label",
+          "fontSize": "breakpoints/wel/sem/fontSizes/label/md",
+          "fontStyle": "breakpoints/wel/sem/fontWeights/label/default",
+          "fontFamily": "breakpoints/wel/sem/fontFamilies/label",
+          "lineHeight": "breakpoints/wel/sem/lineHeights/label/md",
+          "width": 88,
+          "height": 20,
+          "_added": true
+        },
+        "💠 web.separator/vertical": {
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 1,
+          "height": 40,
+          "_added": true
+        },
+        "date-picker": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 4,
+          "width": 179,
+          "height": 20,
+          "_added": true
+        },
+        "room": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 8,
+          "paddingRight": 16,
+          "paddingBottom": 8,
+          "width": 206,
+          "height": 56,
+          "_added": true
+        },
+        "special rates": {
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingTop": 8,
+          "paddingRight": 16,
+          "paddingBottom": 8,
+          "width": 152,
+          "height": 56,
+          "_added": true
+        },
+        "💠 web.button-bb": {
+          "paddingLeft": 12,
+          "paddingTop": 8,
+          "paddingRight": 12,
+          "paddingBottom": 8,
+          "width": 113,
+          "height": 40
+        },
+        "wrapper": {
+          "paddingLeft": 4,
+          "paddingRight": 4,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 10,
+          "width": 89,
+          "height": 24,
+          "_added": true
+        },
+        "right-icon": {
+          "width": 24,
+          "height": 24,
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "visible": false,
+          "_added": true
+        },
+        ".search-engine": {
+          "_removed": true
+        },
+        "slots": {
+          "_removed": true
+        },
+        "autocomplete": {
+          "_removed": true
+        },
+        "separator": {
+          "_removed": true
+        },
+        "date picker": {
+          "_removed": true
+        },
+        ".search-button": {
+          "_removed": true
+        },
+        "special-rates": {
+          "_removed": true
+        },
+        "💠 web.separator": {
+          "_removed": true
+        },
+        "💠 web.link": {
+          "_removed": true
+        },
+        "link label": {
+          "_removed": true
+        },
+        "💠 chevron-down-24": {
+          "_removed": true
+        }
+      }
+    }
+  ],
+  "tokens": [
+    "breakpoints/wel/comp/bookingEngine/radius",
+    "breakpoints/wel/comp/checkbox/radius",
+    "breakpoints/wel/sem/borderRadius/container-high",
+    "breakpoints/wel/sem/borderRadius/element/interactive-high",
+    "breakpoints/wel/sem/borderWidth/default",
+    "breakpoints/wel/sem/borderWidth/strong",
+    "breakpoints/wel/sem/fontFamilies/body",
+    "breakpoints/wel/sem/fontFamilies/label",
+    "breakpoints/wel/sem/fontFamilies/link",
+    "breakpoints/wel/sem/fontFamilies/title",
+    "breakpoints/wel/sem/fontSizes/body/md",
+    "breakpoints/wel/sem/fontSizes/body/sm",
+    "breakpoints/wel/sem/fontSizes/label/md",
+    "breakpoints/wel/sem/fontSizes/link/md",
+    "breakpoints/wel/sem/fontSizes/title/sm",
+    "breakpoints/wel/sem/fontWeights/body/default",
+    "breakpoints/wel/sem/fontWeights/body/strong",
+    "breakpoints/wel/sem/fontWeights/label/default",
+    "breakpoints/wel/sem/fontWeights/link",
+    "breakpoints/wel/sem/fontWeights/title",
+    "breakpoints/wel/sem/letterSpacing/body",
+    "breakpoints/wel/sem/letterSpacing/label",
+    "breakpoints/wel/sem/letterSpacing/link",
+    "breakpoints/wel/sem/letterSpacing/title",
+    "breakpoints/wel/sem/lineHeights/body/md",
+    "breakpoints/wel/sem/lineHeights/body/sm",
+    "breakpoints/wel/sem/lineHeights/label/md",
+    "breakpoints/wel/sem/lineHeights/link/md",
+    "breakpoints/wel/sem/lineHeights/title/sm",
+    "colorModes/wel/comp/btn/primary/bg-gradient-start",
+    "colorModes/wel/comp/btn/primary/border-color",
+    "colorModes/wel/sem/color/accent-container-low",
+    "colorModes/wel/sem/color/danger-container-low",
+    "colorModes/wel/sem/color/focus",
+    "colorModes/wel/sem/color/link",
+    "colorModes/wel/sem/color/on-accent-container",
+    "colorModes/wel/sem/color/on-danger-container-low",
+    "colorModes/wel/sem/color/on-surface-hi",
+    "colorModes/wel/sem/color/on-surface-low",
+    "colorModes/wel/sem/color/on-surface-mid",
+    "colorModes/wel/sem/color/outline-accent",
+    "colorModes/wel/sem/color/outline-danger",
+    "colorModes/wel/sem/color/outline-hi",
+    "colorModes/wel/sem/color/outline-low",
+    "colorModes/wel/sem/color/shadow-default",
+    "colorModes/wel/sem/color/surface",
+    "colorModes/wel/sem/color/surface-container-hi",
+    "colorModes/wel/sem/color/surface-container-low",
+    "colorModes/wel/sem/color/surface-container-mid"
+  ],
+  "meta": {
+    "nid": "25393:101495",
+    "pid": "25393:98490"
+  },
+  "_stats": {
+    "aliases": 96,
+    "resolved": 96,
+    "instances": 163,
+    "resolvedInstances": 163
+  },
+  "_extracted_at": "2026-04-01T17:58:44.524Z"
+}
