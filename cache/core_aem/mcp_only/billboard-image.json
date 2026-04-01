@@ -1,10 +1,8 @@
 {
   "component": "Billboard Image",
-  "figmaId": "aem.billboard-image",
+  "figma_ids": ["aem.billboard-image"],
   "title": "💠 aem.billboard-image",
   "description": "",
-  "vc": 7,
-  "dv": "breakpoint=mobile (320-767), image-position=left",
   "props": {
     "action": {
       "type": "boolean",
@@ -153,9 +151,14 @@
     "actual": 7,
     "missing": 1
   },
-  "meta": {
-    "nid": "5419:69031",
-    "pid": "64:59"
-  },
-  "_extracted_at": "2026-04-01T14:23:08.879Z"
+  "metadata": {
+    "figma_source": {
+      "nodeId": "5419:69031",
+      "pageId": "64:59"
+    },
+    "variant_count": 7,
+    "default_variant": "breakpoint=mobile (320-767), image-position=left",
+    "extracted_at": "2026-04-01T14:23:08.879Z",
+    "extractor_version": "mcp_v6.2"
+  }
 }

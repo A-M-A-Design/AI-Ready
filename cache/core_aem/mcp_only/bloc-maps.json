@@ -1,10 +1,8 @@
 {
   "component": "Bloc Maps",
-  "figmaId": "aem.bloc-maps",
+  "figma_ids": ["aem.bloc-maps"],
   "title": "💠 aem.bloc-maps",
   "description": "",
-  "vc": 4,
-  "dv": "breakpoint=mobile",
   "props": {
     "breakpoint": {
       "type": "string",
@@ -105,9 +103,14 @@
     "colorModes/wel/sem/number/shadow-blur"
   ],
   "invalid_combinations": [],
-  "meta": {
-    "nid": "26639:30964",
-    "pid": "25028:172"
-  },
-  "_extracted_at": "2026-04-01T14:23:11.030Z"
+  "metadata": {
+    "figma_source": {
+      "nodeId": "26639:30964",
+      "pageId": "25028:172"
+    },
+    "variant_count": 4,
+    "default_variant": "breakpoint=mobile",
+    "extracted_at": "2026-04-01T14:23:11.030Z",
+    "extractor_version": "mcp_v6.2"
+  }
 }

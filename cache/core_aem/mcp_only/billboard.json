@@ -1,10 +1,8 @@
 {
   "component": "Billboard",
-  "figmaId": "aem.billboard",
+  "figma_ids": ["aem.billboard"],
   "title": "💠 aem.billboard",
   "description": "Overview\n\nBillboards is the main promotional molecule.\nIt can be used for promotional content, newsletter, loyalty push.\nHe promotes content for users to call to action.\n\nBehaviour\n\nCan display text, image, list or very simple form\nCan have 1 or 2 button(s)\nDisplayed full grid with emphasis\n\nDo / Don't\n\n✅ Respect color systems for the backgrounds\n\n❌ Don't overwhelm user with too many billboards on the same page\n❌ Do not use for non-promotional content\n❌ Do not put them underneath each other\n❌ Full width display is deprecated\n\nContent guidelines\n\nBillboards should:\nBe as short as possible, especially for the title text.\nUse eye-catching phrases, with key information for the user.\nKeep the description text to 150 characters maximum.\nFollow button label guidelines.",
-  "vc": 12,
-  "dv": "breakpoint=mobile (320-767), type=default",
   "props": {
     "kicker": {
       "type": "boolean",
@@ -156,9 +154,14 @@
     "colorModes/wel/sem/color/on-surface-mid"
   ],
   "invalid_combinations": [],
-  "meta": {
-    "nid": "5390:5662",
-    "pid": "64:59"
-  },
-  "_extracted_at": "2026-04-01T14:23:08.476Z"
+  "metadata": {
+    "figma_source": {
+      "nodeId": "5390:5662",
+      "pageId": "64:59"
+    },
+    "variant_count": 12,
+    "default_variant": "breakpoint=mobile (320-767), type=default",
+    "extracted_at": "2026-04-01T14:23:08.476Z",
+    "extractor_version": "mcp_v6.2"
+  }
 }
